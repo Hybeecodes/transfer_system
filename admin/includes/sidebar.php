@@ -31,17 +31,16 @@ $page = $pageArr[count($pageArr)-1];
                     <p>Dashboard</p>
                 </a>
             </li>
+            <li class="nav-item ">
+                <a class="nav-link <?php if($page == 'positions.php') echo 'active'; ?>" href="positions.php">
+                    <i class="material-icons">content_paste</i>
+                    <p>Positions</p>
+                </a>
+            </li>
            <li class="nav-item ">
                <a class="nav-link <?php if($page == 'faculties.php') echo 'active'; ?>" href="faculties.php">
                    <i class="material-icons">content_paste</i>
                    <p>Faculties</p>
-               </a>
-            </li>
-
-            <li class="nav-item ">
-               <a class="nav-link <?php if($page == 'add_faculty.php') echo 'active'; ?>" href="add_faculty.php">
-                   <i class="material-icons">content_paste</i>
-                   <p>Add Faculty</p>
                </a>
             </li>
 

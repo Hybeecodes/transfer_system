@@ -52,11 +52,22 @@ Automated Staff Transfer System
                             <p class="card-category"> This is a list Faculties </p>
                         </div>
                         <div class="card-body">
+                            <h3>Add New Faculty</h3>
+                            <form action="" id="newFaculty" class="row">
+                                <div class="form-gorup col-8">
+                                    <input type="text" name="name" placeholder="Faculty Name" class="form-control">
+                                </div>
+                                <input type="hidden" name="add_faculty" value="1">
+                                <div class="col-3">
+                                    <button type="submit" class="btn btn-primary">Add Faculty</button>
+                                </div>
+
+                            </form>
                             <div class="table-responsive">
                                 <table class="table" id="faculty">
                                     <thead class=" text-primary">
                                     <th>
-                                        ID
+                                        S/N
                                     </th>
                                     <th>
                                         Name
@@ -67,24 +78,24 @@ Automated Staff Transfer System
                                     </thead>
                                     <tbody>
                                     <?php
-                                    if(!empty($faculties) && count($faculties) > 0){
+                                    if(!empty($faculties) && count($faculties) > 0){ $i=0;
                                         foreach ($faculties as $faculty){
+                                            $loc_num = count($admin->get_faculty_locations($faculty['faculty_id']));
                                     ?>
                                     <tr>
                                         <td>
-                                            1
+                                            <?= ++$i; ?>
                                         </td>
                                         <td>
                                             <?php if(isset($faculty['name'])) echo $faculty['name'] ?>
                                         </td>
                                         <td>
-                                           
+                                            <?= $loc_num ?>
                                         </td>
                                     </tr>
                                     <?php   }
                                     } ?>
                                     </tbody>
-                                    <a href="add_faculty.php" style="float:right" class="btn btn-primary">Add New Faculty</a>
                                 </table>
                             </div>
                         </div>
@@ -110,6 +121,25 @@ Automated Staff Transfer System
               'pdfHtml5'
           ]
       });
+
+      $('#newFaculty').submit(function (e) {
+          e.preventDefault();
+          let form = new FormData(this);
+          $.ajax({
+              type: 'POST',
+              url: 'parser.php',
+              data: form,
+              cache: false,
+              contentType: false,
+              processData: false,
+              success: function(data){
+                  console.log(data);
+              },
+              error: function(xhr){
+                  console.log(xhr);
+              }
+          })
+      })
   </script>
 
 </body>

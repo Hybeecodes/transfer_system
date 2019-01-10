@@ -10,6 +10,7 @@ include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
 
 $locations = $admin->get_all_locations();
+$faculties = $admin->get_faculties();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +32,8 @@ $locations = $admin->get_all_locations();
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body class="">
@@ -107,8 +110,8 @@ $locations = $admin->get_all_locations();
 
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Year Of Retirement</label>
-                                        <input type="number" class="form-control" min="1990" max="2032" step="1" name="retirement_year" id="retirement_year">
+                                        <label class="bmd-label-floating">Last Transfer Date</label>
+                                        <input type="date" class="form-control" name="transfer_date" id="transfer_date">
                                     </div>
                                 </div>
                             </div>
@@ -125,16 +128,38 @@ $locations = $admin->get_all_locations();
 
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Gender</label>
-                                        <select name="location_id" id="location" class="form-control">
+                                        <label class="bmd-label-floating">Faculty</label>
+                                        <select name="faculty" id="faculty" class="form-control">
+                                            <option value=""></option>
                                             <?php 
-                                            if(!empty($locations) && count($locations) > 0){
-                                                foreach ($locations as $location) { ?>
-                                                    <option value="<?php if(isset($location['location_id'])) echo $location['location_id'] ?>"><?php if(isset($location['name'])) echo $location['name'] ?></option>
+                                            if(!empty($faculties) && count($faculties) > 0){
+                                                foreach ($faculties as $faculty) { ?>
+                                                    <option value="<?php if(isset($faculty['faculty_id'])) echo $faculty['faculty_id'] ?>"><?php if(isset($faculty['name'])) echo $faculty['name'] ?></option>
                                             <?php    }
                                                 
                                             }
                                             ?>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Location</label>
+                                        <select name="location" id="location" class="form-control">
+                                            <option value=""></option>
+
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Position</label>
+                                        <select name="position" id="position" class="form-control">
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                 </div>
@@ -164,6 +189,15 @@ $locations = $admin->get_all_locations();
             'pdfHtml5'
         ]
     });
+    $('#location').select2({
+        placeholder: "Select Location"
+    });
+    $('#faculty').select2({
+        placeholder: "Select Faculty"
+    });
+    $('#position').select2({
+        placeholder: "Select Position"
+    });
 
     function validateInput(){
         let email = $('#email').val();
@@ -174,6 +208,34 @@ $locations = $admin->get_all_locations();
         }
         return true;
     }
+
+    $('#faculty').change(function () {
+        $('.new_locs').remove();
+        let faculty = $(this).val();
+        // console.log(faculty);
+        // fetch locations in faculty
+        $.get(`parser.php?get_fac_locs=1&fac_id=${faculty}`,function (res) {
+            // console.log(res);
+            data= JSON.parse(res);
+            data.forEach((d)=>{
+                $('#location').append(`<option class="new_locs" value="${d.location_id}">${d.name}</option>`);
+            });
+        });
+    });
+
+    $('#location').change(function () {
+        $('.new_pos').remove();
+        let location = $(this).val();
+        // console.log(faculty);
+        // fetch locations in faculty
+        $.get(`parser.php?get_loc_pos=1&loc_id=${location}`,function (res) {
+            // console.log(res);
+            data= JSON.parse(res);
+            data.forEach((d)=>{
+                $('#position').append(`<option class="new_pos" value="${d.position_id}">${d.name}</option>`);
+            });
+        });
+    });
 
     $('#staffForm').submit(function(e){
         e.preventDefault();
@@ -205,9 +267,9 @@ $locations = $admin->get_all_locations();
             error:function (xhr) {
                 alert(xhr.statusText);
             }
-        })
+        });
 
-    })
+    });
 
 </script>
 

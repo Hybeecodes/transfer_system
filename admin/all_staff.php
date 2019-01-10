@@ -71,6 +71,9 @@ Automated Staff Transfer System
                                         Phone
                                     </th>
                                     <th>
+                                        Location
+                                    </th>
+                                    <th>
                                         Employment Year
                                     </th>
                                     <th>
@@ -103,6 +106,9 @@ Automated Staff Transfer System
                                         </td>
                                         <td>
                                             <?php if(isset($st['phone'])) echo $st['phone'] ?>
+                                        </td>
+                                        <td>
+                                            <?php if(isset($st['location_id'])) echo $admin->get_location_name($st['location_id']) ?>
                                         </td>
                                         <td>
                                             <?php if(isset($st['year_of_employment'])) echo $st['year_of_employment'] ?>

@@ -10,6 +10,7 @@ include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
 // get all faculties
 $faculties = $admin->get_faculties();
+$positions = $admin->get_all_positions();
 // var_dump($faculties);
 ?>
 <!DOCTYPE html>
@@ -32,6 +33,8 @@ $faculties = $admin->get_faculties();
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/demo/demo.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+
 </head>
 
 <body class="">
@@ -45,8 +48,8 @@ $faculties = $admin->get_faculties();
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Add New Faculty</h4>
-                        <p class="card-category"> Please Fill in the Form to add New Faculty </p>
+                        <h4 class="card-title ">Add New Location</h4>
+                        <p class="card-category"> Please Fill in the Form to add New Location </p>
                     </div>
                     <div class="card-body">
                         <form id="locationForm">
@@ -79,6 +82,25 @@ $faculties = $admin->get_faculties();
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Available Positions</label>
+                                        <select name="positions[]" class="form-control" multiple id="positions">
+                                            <option value=""></option>
+                                            <?php
+                                            if(!empty($positions) && count($positions) > 0){
+                                                foreach ($positions as $position) { ?>
+                                                    <option value="<?php if(isset($position['position_id'])) echo $position['position_id'] ?>"><?php if(isset($position['name'])) echo $position['name'] ?></option>
+                                                <?php    }
+                                            }
+                                            ?>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary" id="submit" >Add Location</button>
                             </div>
@@ -95,6 +117,9 @@ $faculties = $admin->get_faculties();
 
 <?php include 'includes/scripts.php' ?>
 <script>
+    $('#positions').select2({
+        placeholder:"Select Available Positions"
+    });
     function validateInput(){
         let email = $('#name').val();
         if(email === ''){

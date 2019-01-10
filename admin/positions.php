@@ -1,15 +1,15 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Megacodes
- * Date: 11/15/2018
- * Time: 3:06 PM
+ * User: hybeecodes
+ * Date: 12/16/18
+ * Time: 8:05 PM
  */
 include '../app/init.php';
 include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
-$staff = $admin->get_staff_to_be_transfererd();
-//var_dump($staff);
+$positions = $admin->get_all_positions();
+//var_dump($positions);
 //exit;
 ?>
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ $staff = $admin->get_staff_to_be_transfererd();
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Automated Staff Transfer System
+        Automated Staff Transfer System | Positions
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -47,11 +47,21 @@ $staff = $admin->get_staff_to_be_transfererd();
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title ">All Transferable Staff</h4>
-                                <p class="card-category"> This is a list of staff due for transfer </p>
+                                <h4 class="card-title ">All School Staff</h4>
+                                <p class="card-category"> This is a list of all staff </p>
                             </div>
                             <div class="card-body">
-                                <button class="btn btn-primary" id="init_transfer">Initiate Transfer Process</button>
+                                <h3>Add New Position</h3>
+                                <form action="" id="newPosition" class="row">
+                                    <div class="form-gorup col-8">
+                                        <input type="text" name="name" placeholder="Position Name" class="form-control">
+                                    </div>
+                                    <input type="hidden" name="new_pos" value="1">
+                                    <div class="col-3">
+                                        <button type="submit" class="btn btn-primary">Add Position</button>
+                                    </div>
+
+                                </form>
                                 <div class="table-responsive">
                                     <table class="table" id="staff">
                                         <thead class=" text-primary">
@@ -59,44 +69,20 @@ $staff = $admin->get_staff_to_be_transfererd();
                                             ID
                                         </th>
                                         <th>
-                                            Firstname
-                                        </th>
-                                        <th>
-                                            Lastname
-                                        </th>
-                                        <th>
-                                            Gender
-                                        </th>
-                                        <th>
-                                            Current Location
-                                        </th>
-                                        <th>
-                                            Last Transfer Date
+                                            Name
                                         </th>
                                         </thead>
                                         <tbody>
                                         <?php
-                                        if(!empty($staff) && count($staff) > 0){
-                                            foreach ($staff as $st){
+                                        if(!empty($positions) && count($positions) > 0){
+                                            foreach ($positions as $position){
                                                 ?>
                                                 <tr>
                                                     <td>
                                                         1
                                                     </td>
                                                     <td>
-                                                        <?php if(isset($st['firstname'])) echo $st['firstname'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if(isset($st['lastname'])) echo $st['lastname'] ?>
-                                                    </td>
-                                                    <td class="text-primary">
-                                                        <?php if(isset($st['gender'])) echo $st['gender'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if(isset($st['location_id'])) echo $admin->get_location_name($st['location_id']) ?>
-                                                    </td>
-                                                    <td class="text-primary">
-                                                        <?php if(isset($st['last_transfer_date'])) echo date('D,d M, Y',strtotime($st['last_transfer_date'])) ?>
+                                                        <?php if(isset($position['name'])) echo $position['name'] ?>
                                                     </td>
                                                 </tr>
                                             <?php   }
@@ -118,7 +104,7 @@ $staff = $admin->get_staff_to_be_transfererd();
 
 <?php include 'includes/scripts.php' ?>
 <script>
-    $('#staff').DataTable({
+    $('table').DataTable({
         dom: 'Bfrtip',
         buttons: [
             'copyHtml5',
@@ -127,17 +113,21 @@ $staff = $admin->get_staff_to_be_transfererd();
             'pdfHtml5'
         ]
     });
-    $('#init_transfer').click(function () {
+
+    $('#newPosition').submit(function (e) {
+        e.preventDefault();
+        let form = new FormData(this);
         $.ajax({
-            type:'GET',
-            url: 'parser.php?transfer_all=1',
-            cache:false,
+            type: 'POST',
+            url: 'parser.php',
+            data: form,
+            cache: false,
             contentType: false,
             processData: false,
-            success: function (res) {
-                console.log(res);
+            success: function(data){
+                console.log(data);
             },
-            error:function (xhr) {
+            error: function(xhr){
                 console.log(xhr);
             }
         })
