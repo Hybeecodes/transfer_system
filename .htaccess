@@ -1,0 +1,22 @@
+# .htaccess file
+
+Options +Indexes
+IndexOptions FancyIndexing
+
+#DirectoryIndex login.php
+
+# ignore some file extensions
+#IndexIgnore *.txt
+
+# rewrite url
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteCond %{REQUEST_FILENAME}\.php -f
+
+RewriteRule ^([0-9a-zA-Z_-]+) $1.php
+
+RewriteRule ^admin/([0-9a-zA-Z_\-]+)/?$ admin/$2 [QSA,L]
+
+#RewriteRule ^admin/([0-9a-zA-Z_-]+) admin/$1.php [NC,L]

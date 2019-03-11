@@ -71,6 +71,9 @@ Automated Staff Transfer System
                                         Phone
                                     </th>
                                     <th>
+                                        Location
+                                    </th>
+                                    <th>
                                         Employment Year
                                     </th>
                                     <th>
@@ -82,6 +85,7 @@ Automated Staff Transfer System
                                     <th>
                                         Gender
                                     </th>
+                                    <th>Action</th>
                                     </thead>
                                     <tbody>
                                     <?php
@@ -105,6 +109,9 @@ Automated Staff Transfer System
                                             <?php if(isset($st['phone'])) echo $st['phone'] ?>
                                         </td>
                                         <td>
+                                            <?php if(isset($st['location_id'])) echo $admin->get_location_name($st['location_id']) ?>
+                                        </td>
+                                        <td>
                                             <?php if(isset($st['year_of_employment'])) echo $st['year_of_employment'] ?>
                                         </td>
                                         <td>
@@ -115,6 +122,10 @@ Automated Staff Transfer System
                                         </td>
                                         <td class="text-primary">
                                             <?php if(isset($st['gender'])) echo $st['gender'] ?>
+                                        </td>
+                                        <td>
+                                            <a href="edit_staff.php?sid=<?= base64_encode($st['staff_id']) ?>"
+                                               class="btn btn-primary">Edit</a>
                                         </td>
                                     </tr>
                                     <?php   }

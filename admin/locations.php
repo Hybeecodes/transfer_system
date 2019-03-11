@@ -68,11 +68,12 @@ Automated Staff Transfer System
                                     <tbody>
                                     <?php
                                     if(!empty($locations) && count($locations) > 0){
+                                        $count = 0;
                                         foreach ($locations as $location){
                                     ?>
                                     <tr>
                                         <td>
-                                            1
+                                            <?= ++$count; ?>
                                         </td>
                                         <td>
                                             <?php if(isset($location['name'])) echo $location['name'] ?>

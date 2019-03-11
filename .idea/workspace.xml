@@ -1,110 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc9f5efd-5363-436b-ae50-0f483e6332c6" name="Default Changelist" comment="" />
+    <list default="true" id="bc9f5efd-5363-436b-ae50-0f483e6332c6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/positions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/test.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/noname_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/noname_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_faculty.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_faculty.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_location.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_location.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/add_staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/add_staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/all_staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/all_staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/change_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/change_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/create_operator.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/create_operator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/faculties.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/faculties.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/scripts.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/scripts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/settings.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/locations.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/locations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/operators.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/operators.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/recent_transfers.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/recent_transfers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/transferable_staff.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/transferable_staff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/classes/Master.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/classes/Master.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/conn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/db_conn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/db_conn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-grid.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-grid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-grid.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-grid.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-grid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-grid.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-grid.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-reboot.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-reboot.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-reboot.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-reboot.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap-reboot.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/bootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/bootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/material-dashboard-rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/material-dashboard-rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/material-dashboard.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/material-dashboard.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/material-dashboard.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/material-dashboard.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/material-dashboard.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/material-dashboard.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mdb.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/mdb.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mdb.lite.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/mdb.lite.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mdb.lite.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/mdb.lite.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mdb.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/mdb.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/demo/demo.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/demo/demo.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/demo/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/demo/demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/demo/docs.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/demo/docs.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Bold.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Light.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Medium.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Regular.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.eot" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.woff" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/assets/font/roboto/Roboto-Thin.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/apple-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/apple-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/cover.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/cover.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/faces/avatar.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/faces/avatar.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/faces/card-profile1-square.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/faces/card-profile1-square.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/faces/card-profile2-square.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/faces/card-profile2-square.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/faces/marc.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/faces/marc.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/mask.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/mask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/new_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/new_logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/sidebar-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/sidebar-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/sidebar-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/sidebar-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/sidebar-3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/sidebar-3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/sidebar-4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/sidebar-4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.bundle.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.bundle.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.bundle.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/bootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/bootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/core/bootstrap-material-design.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/core/bootstrap-material-design.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/core/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/core/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/core/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/core/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/jquery-3.3.1.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/material-dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/material-dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/material-dashboard.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/material-dashboard.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/material-dashboard.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/material-dashboard.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/mdb.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/mdb.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/mdb.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/mdb.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/arrive.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/arrive.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/bootstrap-datetimepicker.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/bootstrap-datetimepicker.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/bootstrap-notify.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/bootstrap-notify.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/bootstrap-selectpicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/bootstrap-selectpicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/bootstrap-tagsinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/bootstrap-tagsinput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/chartist.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/chartist.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/fullcalendar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/fullcalendar.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/jasny-bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/jasny-bootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/jquery-jvectormap.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/jquery-jvectormap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/jquery.bootstrap-wizard.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/jquery.bootstrap-wizard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/jquery.dataTables.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/jquery.dataTables.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/jquery.tagsinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/jquery.tagsinput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/jquery.validate.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/moment.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/nouislider.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/nouislider.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/perfect-scrollbar.jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/perfect-scrollbar.jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/plugins/sweetalert2.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/plugins/sweetalert2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/popper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/popper.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_alerts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_alerts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_cards.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_cards.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_checkboxes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_checkboxes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_core-bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_core-bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_example-pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_example-pages.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_fixed-plugin.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_fixed-plugin.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_footers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_footers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_headers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_headers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_images.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_info-areas.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_info-areas.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_input-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_misc.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_misc.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_popover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_popups.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_popups.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_radios.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_radios.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_responsive.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_responsive.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_ripples.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_ripples.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_sidebar-and-main-panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_sidebar-and-main-panel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_social-buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_social-buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_tabs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_tabs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_togglebutton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_togglebutton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_tooltip.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_badge.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_breadcrumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_breadcrumb.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_button-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_button-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_close.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_close.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_code.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_custom-forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_custom-forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_functions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_images.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_input-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_jumbotron.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_jumbotron.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_media.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_media.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_print.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_print.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_progress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_progress.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_reboot.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_root.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_root.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_tooltip.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_transitions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/bootstrap-grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/bootstrap-grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/bootstrap-reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/bootstrap-reboot.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_background-variant.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_background-variant.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_badge.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_border-radius.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_border-radius.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_box-shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_breakpoints.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_caret.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_caret.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_clearfix.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_float.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_float.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_gradients.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_gradients.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_grid-framework.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_grid-framework.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_hover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_hover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_image.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_lists.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_lists.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_nav-divider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_nav-divider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_navbar-align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_navbar-align.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_reset-text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_reset-text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_resize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_resize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_screen-reader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_screen-reader.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_size.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_size.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_table-row.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_table-row.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-emphasis.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-emphasis.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-hide.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-hide.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-truncate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_text-truncate.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_transition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_transition.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_visibility.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/mixins/_visibility.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_align.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_align.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_background.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_background.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_borders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_borders.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_clearfix.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_display.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_display.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_embed.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_embed.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_flex.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_flex.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_float.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_float.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_position.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_position.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_screenreaders.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_screenreaders.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_sizing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_sizing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_spacing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_spacing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_visibility.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/bootstrap/scss/utilities/_visibility.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/cards/_card-plain.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/cards/_card-plain.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/cards/_card-profile.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/cards/_card-profile.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/cards/_card-stats.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/cards/_card-stats.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_animations.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_animations.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_breakpoints.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_chartist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_chartist.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_colored-shadows.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_colored-shadows.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_drawer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_drawer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_hover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_hover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_navbar-colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_navbar-colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_navs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_navs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_sidebar-color.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_sidebar-color.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_transparency.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_transparency.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_vendor-prefixes.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/mixins/_vendor-prefixes.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/plugins/_animate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/plugins/_animate.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/plugins/_chartist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/plugins/_chartist.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/plugins/_perfect-scrollbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/plugins/_perfect-scrollbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_body.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_body.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_bootstrap-material-design-base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_bootstrap-material-design-base.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_bootstrap-material-design.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_bootstrap-material-design.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_brand.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_brand.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_code.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_code.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_colors-map.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_colors-map.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_colors.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_colors.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_custom-forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_custom-forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_drawer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_drawer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_menu.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_menu.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_modals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_modals.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_shadow.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_snackbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_snackbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_spacing.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_spacing.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_state.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_state.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_tooltip.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/material-dashboard/variables/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/documentation.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/documentation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/examples/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/icons.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/icons.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/map.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/map.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/notifications.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/notifications.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/rtl.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/rtl.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/tables.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/tables.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/typography.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/typography.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/upgrade.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/upgrade.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/examples/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gulpfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/gulpfile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/ensureLoggedIn.php" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/ensureLoggedIn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/parser.php" beforeDir="false" afterPath="$PROJECT_DIR$/parser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/transfer_system.sql" beforeDir="false" afterPath="$PROJECT_DIR$/transfer_system.sql" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1203672454">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.41" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="php" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PHP" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="php" value="1865" />
-          <entry key="txt" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PHP" value="1865" />
-          <entry key="PLAIN_TEXT" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.php.new.class">
-        <counts>
-          <entry key="PHP Class.type" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="2009361279">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="8" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.open.time.17" value="1" />
-          <entry key="project.open.time.24" value="1" />
-          <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.36" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.43" value="1" />
-          <entry key="project.open.time.44" value="1" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.open.time.51" value="1" />
-          <entry key="project.open.time.56" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.75" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="18" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="2" />
-          <entry key="php" value="9448" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="2" />
-          <entry key="PHP" value="9448" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="5" />
-          <entry key="php" value="35" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="5" />
-          <entry key="PHP" value="35" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/index.php">
+        <entry file="file://$PROJECT_DIR$/admin/transferable_staff.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            <state relative-caret-position="3406">
+              <caret line="131" column="23" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2210">
+              <caret line="90" column="31" selection-end-line="111" />
             </state>
           </provider>
         </entry>
@@ -112,17 +343,30 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/classes/Admin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="307">
-              <caret line="188" column="5" lean-forward="true" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/transferable_staff.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+            <state relative-caret-position="-5226">
+              <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+              <folding>
+                <element signature="n#get_admin_details#0;n#Admin#0;n#!!top" />
+                <element signature="n#create_admin_user#0;n#Admin#0;n#!!top" />
+                <element signature="n#add_new_staff#0;n#Admin#0;n#!!top" />
+                <element signature="n#search_staff#0;n#Admin#0;n#!!top" />
+                <element signature="n#add_staff_posting_history#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_staff_posting_history#0;n#Admin#0;n#!!top" />
+                <element signature="n#add_staff_posting#0;n#Admin#0;n#!!top" />
+                <element signature="n#update_staff_posting#0;n#Admin#0;n#!!top" />
+                <element signature="n#check_if_location_available#0;n#Admin#0;n#!!top" />
+                <element signature="n#set_staff_transfer_interval#0;n#Admin#0;n#!!top" />
+                <element signature="n#set_location_position#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_all_locations#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_all_location_names#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_faculty_locations#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_all_staff#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_staff_details#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_location_positions#0;n#Admin#0;n#!!top" />
+                <element signature="n#is_location_postion_available#0;n#Admin#0;n#!!top" />
+                <element signature="n#get_all_positions#0;n#Admin#0;n#!!top" />
+                <element signature="n#add_new_position#0;n#Admin#0;n#!!top" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -130,8 +374,50 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/all_staff.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3300">
-              <caret line="137" column="10" selection-start-line="137" selection-start-column="10" selection-end-line="137" selection-end-column="10" />
+            <state relative-caret-position="3302">
+              <caret line="132" column="44" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/classes/Master.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="n#insertData#0;n#Master#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/change_password.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1690">
+              <caret line="70" column="90" selection-start-line="70" selection-start-column="90" selection-end-line="70" selection-end-column="90" />
+              <folding>
+                <element signature="e#6#91#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/admin/includes/sidebar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2340">
+              <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/middleware/ensureLoggedIn.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="34" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -139,8 +425,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/add_staff.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1598">
-              <caret line="191" column="38" lean-forward="true" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
+            <state relative-caret-position="2912">
+              <caret line="112" column="64" selection-start-line="112" selection-start-column="64" selection-end-line="112" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -148,22 +434,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/parser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="31" column="151" selection-start-line="31" selection-start-column="151" selection-end-line="31" selection-end-column="151" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/examples/user.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="161" column="32" selection-start-line="161" selection-start-column="32" selection-end-line="161" selection-end-column="32" />
-              <folding>
-                <element signature="n#head#0;n#html#0;n#!!top" />
-                <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-              </folding>
+            <state relative-caret-position="2990">
+              <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -175,17 +447,29 @@
       <find>../</find>
       <find>../../</find>
       <find>histo</find>
+      <find>tra</find>
+      <find>reti</find>
+      <find>set</find>
+      <find>location_na</find>
+      <find>transfer_inter</find>
+      <find>$this-&gt;transfer_interval</find>
+      <find>password</find>
+      <find>_password</find>
+      <find>sett</find>
+      <find>get_staff_transfer_history</find>
     </findStrings>
     <replaceStrings>
       <replace>./</replace>
       <replace>../</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/db_conn.php" />
-        <option value="$PROJECT_DIR$/app/classes/Master.php" />
         <option value="$PROJECT_DIR$/examples/dashboard.html" />
         <option value="$PROJECT_DIR$/includes/footer.php" />
         <option value="$PROJECT_DIR$/includes/settings.php" />
@@ -199,47 +483,81 @@
         <option value="$PROJECT_DIR$/middleware/ensureLoggedIn.php" />
         <option value="$PROJECT_DIR$/admin/logout.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
-        <option value="$PROJECT_DIR$/admin/includes/scripts.php" />
-        <option value="$PROJECT_DIR$/admin/includes/sidebar.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/login.php" />
-        <option value="$PROJECT_DIR$/admin/all_staff.php" />
-        <option value="$PROJECT_DIR$/admin/transferable_staff.php" />
-        <option value="$PROJECT_DIR$/app/classes/Admin.php" />
+        <option value="$PROJECT_DIR$/admin/positions.php" />
+        <option value="$PROJECT_DIR$/admin/includes/scripts.php" />
+        <option value="$PROJECT_DIR$/admin/add_location.php" />
+        <option value="$PROJECT_DIR$/admin/faculties.php" />
         <option value="$PROJECT_DIR$/admin/add_staff.php" />
+        <option value="$PROJECT_DIR$/admin/test.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/app/classes/Master.php" />
+        <option value="$PROJECT_DIR$/admin/settings.php" />
+        <option value="$PROJECT_DIR$/admin/transferable_staff.php" />
+        <option value="$PROJECT_DIR$/admin/includes/sidebar.php" />
+        <option value="$PROJECT_DIR$/admin/update_password.php" />
+        <option value="$PROJECT_DIR$/admin/change_password.php" />
         <option value="$PROJECT_DIR$/admin/parser.php" />
+        <option value="$PROJECT_DIR$/admin/includes/header.php" />
+        <option value="$PROJECT_DIR$/app/classes/Admin.php" />
+        <option value="$PROJECT_DIR$/admin/all_staff.php" />
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-    </packageJsonPaths>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="width" value="977" />
-    <option name="height" value="1088" />
+    <option name="x" value="961" />
+    <option name="width" value="959" />
+    <option name="height" value="1080" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="transfer_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transfer_system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="transfer_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transfer_system" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="transfer_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transfer_system" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="includes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="transfer_system" type="b2602c69:ProjectViewProjectNode" />
+              <item name="transfer_system" type="462c0819:PsiDirectoryNode" />
+              <item name="middleware" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/projects/nodejs/katerers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chat-app" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -289,19 +607,51 @@
       <workItem from="1543730315011" duration="1418000" />
       <workItem from="1543745502614" duration="1196000" />
       <workItem from="1544179859134" duration="5862000" />
+      <workItem from="1544694951386" duration="201000" />
+      <workItem from="1544732067306" duration="363000" />
+      <workItem from="1544979122531" duration="11622000" />
+      <workItem from="1545061578043" duration="1207000" />
+      <workItem from="1545117042492" duration="599000" />
+      <workItem from="1545142314904" duration="599000" />
+      <workItem from="1545205576762" duration="599000" />
+      <workItem from="1545293388838" duration="707000" />
+      <workItem from="1545636278807" duration="1208000" />
+      <workItem from="1545757576963" duration="673000" />
+      <workItem from="1545890412897" duration="6668000" />
+      <workItem from="1545934049829" duration="813000" />
+      <workItem from="1545944540729" duration="10262000" />
+      <workItem from="1546091664999" duration="6847000" />
+      <workItem from="1546584078574" duration="599000" />
+      <workItem from="1546592393879" duration="3382000" />
+      <workItem from="1546700347898" duration="2472000" />
+      <workItem from="1546760433238" duration="194000" />
+      <workItem from="1547125068355" duration="671000" />
+      <workItem from="1547484749445" duration="2446000" />
+      <workItem from="1547506613616" duration="672000" />
+      <workItem from="1549625581371" duration="869000" />
+      <workItem from="1550407745290" duration="153000" />
+      <workItem from="1550408074495" duration="6072000" />
+      <workItem from="1550489604607" duration="623000" />
+      <workItem from="1550903164617" duration="667000" />
+      <workItem from="1550934654591" duration="611000" />
+      <workItem from="1551627956322" duration="1888000" />
+      <workItem from="1551635194311" duration="922000" />
+      <workItem from="1551921256162" duration="77000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78518000" />
+    <option name="totallyTimeSpent" value="143204000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="0" y="-1" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2761394" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08974359" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="Gulp" order="3" side_tool="true" />
+      <window_info id="npm" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -319,42 +669,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12801608" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3297587" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/classes/Master.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/includes/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -376,13 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="62" column="79" lean-forward="true" selection-start-line="62" selection-start-column="79" selection-end-line="62" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/recent_transfers.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -395,9 +707,6 @@
           <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/change_password.php">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/parser.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -434,20 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/scripts.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/ensureLoggedIn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/logout.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -459,13 +754,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
           <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/admin/includes/sidebar.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -492,55 +780,171 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
+        <state relative-caret-position="660">
           <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/examples/user.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="260">
           <caret line="161" column="32" selection-start-line="161" selection-start-column="32" selection-end-line="161" selection-end-column="32" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#nav#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/admin/all_staff.php">
+    <entry file="file://$PROJECT_DIR$/assets/js/mdb.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3300">
-          <caret line="137" column="10" selection-start-line="137" selection-start-column="10" selection-end-line="137" selection-end-column="10" />
+        <state relative-caret-position="20">
+          <caret line="14372" column="12" selection-start-line="14372" selection-start-column="12" selection-end-line="14372" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/scripts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="50" column="99" selection-start-line="50" selection-start-column="99" selection-end-line="50" selection-end-column="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/add_location.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="94" column="27" selection-start-line="94" selection-start-column="27" selection-end-line="94" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/faculties.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="889">
+          <caret line="89" column="46" selection-start-line="89" selection-start-column="46" selection-end-line="89" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../foodlocker/.htaccess" />
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/positions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="112" column="17" selection-start-line="112" selection-start-column="17" selection-end-line="112" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/update_password.php" />
+    <entry file="file://$PROJECT_DIR$/admin/includes/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1196">
+          <caret line="51" column="80" selection-start-line="51" selection-start-column="80" selection-end-line="51" selection-end-column="80" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/transferable_staff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="56" column="34" lean-forward="true" selection-start-line="56" selection-start-column="34" selection-end-line="56" selection-end-column="34" />
+        <state relative-caret-position="3406">
+          <caret line="131" column="23" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2210">
+          <caret line="90" column="31" selection-end-line="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/all_staff.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3302">
+          <caret line="132" column="44" selection-start-line="132" selection-start-column="44" selection-end-line="132" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/classes/Master.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="n#insertData#0;n#Master#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/change_password.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1690">
+          <caret line="70" column="90" selection-start-line="70" selection-start-column="90" selection-end-line="70" selection-end-column="90" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/admin/includes/sidebar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2340">
+          <caret line="95" column="48" lean-forward="true" selection-start-line="95" selection-start-column="48" selection-end-line="95" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/ensureLoggedIn.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="34" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/add_staff.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="191" column="38" lean-forward="true" selection-start-line="191" selection-start-column="38" selection-end-line="191" selection-end-column="38" />
+        <state relative-caret-position="2912">
+          <caret line="112" column="64" selection-start-line="112" selection-start-column="64" selection-end-line="112" selection-end-column="64" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/parser.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="151" selection-start-line="31" selection-start-column="151" selection-end-line="31" selection-end-column="151" />
+        <state relative-caret-position="2990">
+          <caret line="120" column="38" selection-start-line="120" selection-start-column="38" selection-end-line="120" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/classes/Admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="188" column="5" lean-forward="true" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
+        <state relative-caret-position="-5226">
+          <caret line="17" column="20" lean-forward="true" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding>
+            <element signature="n#get_admin_details#0;n#Admin#0;n#!!top" />
+            <element signature="n#create_admin_user#0;n#Admin#0;n#!!top" />
+            <element signature="n#add_new_staff#0;n#Admin#0;n#!!top" />
+            <element signature="n#search_staff#0;n#Admin#0;n#!!top" />
+            <element signature="n#add_staff_posting_history#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_staff_posting_history#0;n#Admin#0;n#!!top" />
+            <element signature="n#add_staff_posting#0;n#Admin#0;n#!!top" />
+            <element signature="n#update_staff_posting#0;n#Admin#0;n#!!top" />
+            <element signature="n#check_if_location_available#0;n#Admin#0;n#!!top" />
+            <element signature="n#set_staff_transfer_interval#0;n#Admin#0;n#!!top" />
+            <element signature="n#set_location_position#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_all_locations#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_all_location_names#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_faculty_locations#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_all_staff#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_staff_details#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_location_positions#0;n#Admin#0;n#!!top" />
+            <element signature="n#is_location_postion_available#0;n#Admin#0;n#!!top" />
+            <element signature="n#get_all_positions#0;n#Admin#0;n#!!top" />
+            <element signature="n#add_new_position#0;n#Admin#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>

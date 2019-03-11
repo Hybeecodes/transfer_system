@@ -51,6 +51,7 @@ $staff = $admin->get_staff_to_be_transfererd();
                                 <p class="card-category"> This is a list of staff due for transfer </p>
                             </div>
                             <div class="card-body">
+                                <button class="btn btn-primary" id="init_transfer">Initiate Transfer Process</button>
                                 <div class="table-responsive">
                                     <table class="table" id="staff">
                                         <thead class=" text-primary">
@@ -64,22 +65,13 @@ $staff = $admin->get_staff_to_be_transfererd();
                                             Lastname
                                         </th>
                                         <th>
-                                            Email
-                                        </th>
-                                        <th>
-                                            Phone
-                                        </th>
-                                        <th>
-                                            Employment Year
-                                        </th>
-                                        <th>
-                                            Retirement Year
-                                        </th>
-                                        <th>
-                                            Age
-                                        </th>
-                                        <th>
                                             Gender
+                                        </th>
+                                        <th>
+                                            Current Location
+                                        </th>
+                                        <th>
+                                            Last Transfer Date
                                         </th>
                                         </thead>
                                         <tbody>
@@ -97,23 +89,14 @@ $staff = $admin->get_staff_to_be_transfererd();
                                                     <td>
                                                         <?php if(isset($st['lastname'])) echo $st['lastname'] ?>
                                                     </td>
-                                                    <td>
-                                                        <?php if(isset($st['email'])) echo $st['email'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if(isset($st['phone'])) echo $st['phone'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if(isset($st['year_of_employment'])) echo $st['year_of_employment'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if(isset($st['year_of_retirement'])) echo $st['year_of_retirement'] ?>
-                                                    </td>
-                                                    <td>
-                                                        <?php if(isset($st['age'])) echo $st['age'] ?>
-                                                    </td>
                                                     <td class="text-primary">
                                                         <?php if(isset($st['gender'])) echo $st['gender'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php if(isset($st['location_id'])) echo $admin->get_location_name($st['location_id']) ?>
+                                                    </td>
+                                                    <td class="text-primary">
+                                                        <?php if(isset($st['last_transfer_date'])) echo date('D,d M, Y',strtotime($st['last_transfer_date'])) ?>
                                                     </td>
                                                 </tr>
                                             <?php   }
@@ -144,6 +127,28 @@ $staff = $admin->get_staff_to_be_transfererd();
             'pdfHtml5'
         ]
     });
+    $('#init_transfer').click(function () {
+        $.ajax({
+            type:'GET',
+            url: 'parser.php?transfer_all=1',
+            cache:false,
+            contentType: false,
+            processData: false,
+            success: function (res) {
+                const data = JSON.parse(res);
+                if(data['status']){
+                    swal("Great!",data['message'],'success').then(()=>{
+                        location.reload(true);
+                    })
+                }else{
+                    swal("Huh!",data['message'],'error');
+                }
+            },
+            error:function (xhr) {
+                console.log(xhr);
+            }
+        })
+    })
 </script>
 
 </body>
