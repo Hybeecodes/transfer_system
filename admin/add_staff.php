@@ -110,7 +110,7 @@ $faculties = $admin->get_faculties();
 
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="bmd-label-">Last Transfer Date</label>
+                                        <label class="bmd-label-floating">Last Transfer Date</label>
                                         <input type="date" class="form-control" name="transfer_date" id="transfer_date">
                                     </div>
                                 </div>
@@ -128,7 +128,7 @@ $faculties = $admin->get_faculties();
 
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="bmd-label-">Faculty</label>
+                                        <label class="bmd-label-floating">Faculty</label>
                                         <select name="faculty" id="faculty" class="form-control">
                                             <option value=""></option>
                                             <?php 
@@ -147,7 +147,7 @@ $faculties = $admin->get_faculties();
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="bmd-label-">Location</label>
+                                        <label class="bmd-label-floating">Location</label>
                                         <select name="location" id="location" class="form-control">
                                             <option value=""></option>
 
@@ -157,7 +157,7 @@ $faculties = $admin->get_faculties();
 
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="bmd-label-">Position</label>
+                                        <label class="bmd-label-floating">Position</label>
                                         <select name="position" id="position" class="form-control">
                                             <option value=""></option>
                                         </select>

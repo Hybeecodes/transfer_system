@@ -317,6 +317,17 @@ class Admin extends Master
         return $res;
     }
 
+    // public function set_location_position($location_id,$position_id)
+    // {
+    //     $data = [
+    //       "location_id"=>$location_id,
+    //       "position_id"=>$position_id
+    //     ];
+    //     $table = "location_positions";
+    //     $res = $this->insertData($data,$table);
+    //     return $res;
+    // }
+
     public function get_all_locations(){
         $data = "*";
         $table = "locations";
