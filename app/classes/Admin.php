@@ -8,7 +8,6 @@
 
 class Admin extends Master
 {
-
     public function __construct($db_conn){
         Master:: __construct($db_conn);
     }
@@ -59,6 +58,39 @@ class Admin extends Master
         }else{
             return $admin;
         }
+    }
+
+    public function add_supervisor($firstname, $lastname,$email)
+    {
+        $data  =[
+            "firstname" => $firstname,
+            "lastname" => $lastname,
+            "email" => $email
+        ];
+        $table = "supervisors";
+        $new_supervisor = $this->insertData($data, $table);
+        if($new_supervisor){
+            $response = array("status"=>1,"message"=>"Supervisor Created Successfully");
+        }else{
+            $response = array("status"=>0,"message"=>"Sorry, Unable to Create Supervisor");
+        }
+        return json_encode($response);
+    }
+
+    public function get_feeedbacks()
+    {
+        $data = "*";
+        $table = "feedbacks";
+        $feedbacks = $this->getAllData($data, $table);
+        return empty($feedbacks)? []: $feedbacks;
+    }
+
+    public function get_requests()
+    {
+        $data = "*";
+        $table = "requests";
+        $requests = $this->getAllData($data, $table);
+        return empty($requests)? []: $requests;
     }
 
     public function create_admin_user($email,$password,$name,$role){
@@ -317,17 +349,6 @@ class Admin extends Master
         return $res;
     }
 
-    // public function set_location_position($location_id,$position_id)
-    // {
-    //     $data = [
-    //       "location_id"=>$location_id,
-    //       "position_id"=>$position_id
-    //     ];
-    //     $table = "location_positions";
-    //     $res = $this->insertData($data,$table);
-    //     return $res;
-    // }
-
     public function get_all_locations(){
         $data = "*";
         $table = "locations";
@@ -496,6 +517,17 @@ class Admin extends Master
 
     public function update_staff_details($staff_id){
 
+    }
+    
+
+    public function transfer_staff($staff_id)
+    {
+        $faculties = $this->get_faculties();
+        $staff = $this->get_staff_details($staff_id);
+        $current_location = $staff['location_id'];
+        $current_faculty =
+        // randomized faculty
+        // get rndomized locations also
     }
 
 }
