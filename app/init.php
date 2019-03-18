@@ -15,6 +15,7 @@ global $db_conn;
 
 include "classes/Master.php";
 include "classes/Admin.php";
+include "classes/Supervisor.php";
 
 
 $master = new Master($db_conn);

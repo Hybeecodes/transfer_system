@@ -56,7 +56,7 @@ Automated Staff Transfer System
                                 <table class="table" id="locations">
                                     <thead class=" text-primary">
                                     <th>
-                                        ID
+                                        S/N
                                     </th>
                                     <th>
                                         Name

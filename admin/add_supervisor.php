@@ -49,11 +49,11 @@ $levels = $admin->get_levels();
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Add New Location</h4>
-                        <p class="card-category"> Please Fill in the Form to add New Location </p>
+                        <h4 class="card-title ">Add New Supervisor</h4>
+                        <p class="card-category"> Please Fill in the Form to add New Supervisor </p>
                     </div>
                     <div class="card-body">
-                        <form id="locationForm">
+                        <form id="supervisorForm">
                             <div class="alert">
 
                             </div>
@@ -62,6 +62,15 @@ $levels = $admin->get_levels();
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Name</label>
                                         <input type="text" class="form-control" name="name" id="name">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Email</label>
+                                        <input type="email" class="form-control" name="email" id="email">
                                     </div>
                                 </div>
                             </div>
@@ -85,39 +94,33 @@ $levels = $admin->get_levels();
                             </div>
 
                             <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Available Positions</label>
-                                        <select name="positions[]" class="form-control" multiple id="positions">
+                                    <div class="col form-group">
+                                        <label class="bmd-label-floating">Select Faculty</label>
+                                        <select name="faculty" class="form-control" id="faculty">
                                             <option value=""></option>
                                             <?php
-                                            if(!empty($positions) && count($positions) > 0){
-                                                foreach ($positions as $position) { ?>
-                                                    <option value="<?php if(isset($position['position_id'])) echo $position['position_id'] ?>"><?php if(isset($position['name'])) echo $position['name'] ?></option>
+                                            if(!empty($faculties) && count($faculties) > 0){
+                                                foreach ($faculties as $faculty) { ?>
+                                                    <option value="<?php if(isset($faculty['faculty_id'])) echo $faculty['faculty_id'] ?>"><?= $faculty['name'] ?></option>
                                                 <?php    }
                                             }
                                             ?>
 
                                         </select>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                            <div class="form-gorup col">
-                                    <select name="level" id="level" class="form-control">
-                                        <option value="">Select Level</option>
-                                        <?php 
-                                            if(!empty($levels) && count($levels) > 0){
-                                                foreach ($levels as $level) { ?>
-                                                    <option value="<?= $level['level_id'] ?>"><?= $level['name'] ?></option>
-                                            <?php    }
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-                            </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col form-group">
+                                            <label class="bmd-label-floating">Select Location</label>
+                                            <select name="location" class="form-control" id="location">
+                                                <option value=""></option>
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
                             <div class="form-group">
-                                <button type="submit" class="btn btn-primary" id="submit" >Add Location</button>
+                                <button type="submit" class="btn btn-primary" id="submit" >Add Supervisor</button>
                             </div>
                         </form>
                     </div>
@@ -145,7 +148,7 @@ $levels = $admin->get_levels();
     }
 
 
-    $('#locationForm').submit(function(e){
+    $('#supervisorForm').submit(function(e){
         e.preventDefault();
         let form = new FormData(this);
         form.append('add_location',"");

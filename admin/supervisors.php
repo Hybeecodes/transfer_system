@@ -8,7 +8,7 @@
 include '../app/init.php';
 include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
-$positions = $admin->get_all_positions();
+$supervisors = $admin->get_supervisor();
 //var_dump($positions);
 //exit;
 ?>
@@ -21,7 +21,7 @@ $positions = $admin->get_all_positions();
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Automated Staff Transfer System | Positions
+        Automated Staff Transfer System | Supervisors
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -47,21 +47,10 @@ $positions = $admin->get_all_positions();
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title ">All Positions</h4>
-                                <p class="card-category"> This is all available positions </p>
+                                <h4 class="card-title ">All Supervisors</h4>
+                                <p class="card-category"> This is all Location Supervisor </p>
                             </div>
                             <div class="card-body">
-                                <h3>Add New Position</h3>
-                                <form action="" id="newPosition" class="row">
-                                    <div class="form-gorup col-8">
-                                        <input type="text" name="name" placeholder="Position Name" class="form-control">
-                                    </div>
-                                    <input type="hidden" name="new_pos" value="1">
-                                    <div class="col-3">
-                                        <button type="submit" class="btn btn-primary">Add Position</button>
-                                    </div>
-
-                                </form>
                                 <div class="table-responsive">
                                     <table class="table" id="staff">
                                         <thead class=" text-primary">
@@ -71,19 +60,25 @@ $positions = $admin->get_all_positions();
                                         <th>
                                             Name
                                         </th>
+                                        <th>
+                                            Location
+                                        </th>
                                         </thead>
                                         <tbody>
                                         <?php
                                         $count = 0;
-                                        if(!empty($positions) && count($positions) > 0){
-                                            foreach ($positions as $position){
+                                        if(!empty($supervisors) && count($supervisors) > 0){
+                                            foreach ($supervisors as $supervisor){
                                                 ?>
                                                 <tr>
                                                     <td>
                                                         <?= ++$count; ?>
                                                     </td>
                                                     <td>
-                                                        <?php if(isset($position['name'])) echo $position['name'] ?>
+                                                        <?php if(isset($supervisor['name'])) echo $supervisor['name'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?php if(isset($supervisor['location_id'])) echo $supervisor['location_id'] ?>
                                                     </td>
                                                 </tr>
                                             <?php   }
@@ -115,7 +110,7 @@ $positions = $admin->get_all_positions();
         ]
     });
 
-    $('#newPosition').submit(function (e) {
+    $('#newSupervisor').submit(function (e) {
         e.preventDefault();
         let form = new FormData(this);
         $.ajax({

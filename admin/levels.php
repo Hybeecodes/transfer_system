@@ -8,7 +8,7 @@
 include '../app/init.php';
 include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
-$positions = $admin->get_all_positions();
+$levels = $admin->get_levels();
 //var_dump($positions);
 //exit;
 ?>
@@ -21,7 +21,7 @@ $positions = $admin->get_all_positions();
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Automated Staff Transfer System | Positions
+        Automated Staff Transfer System | Levels
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -47,20 +47,19 @@ $positions = $admin->get_all_positions();
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title ">All Positions</h4>
-                                <p class="card-category"> This is all available positions </p>
+                                <h4 class="card-title ">All Levels</h4>
+                                <p class="card-category"> This is all available levels </p>
                             </div>
                             <div class="card-body">
-                                <h3>Add New Position</h3>
-                                <form action="" id="newPosition" class="row">
+                                <h3>Add New Level</h3>
+                                <form action="" id="newLevel" class="row">
                                     <div class="form-gorup col-8">
-                                        <input type="text" name="name" placeholder="Position Name" class="form-control">
+                                        <input type="text" name="name" placeholder="Level Name" class="form-control">
                                     </div>
-                                    <input type="hidden" name="new_pos" value="1">
+                                    <input type="hidden" name="new_level" value="1">
                                     <div class="col-3">
-                                        <button type="submit" class="btn btn-primary">Add Position</button>
+                                        <button type="submit" class="btn btn-primary">Add Level</button>
                                     </div>
-
                                 </form>
                                 <div class="table-responsive">
                                     <table class="table" id="staff">
@@ -75,15 +74,15 @@ $positions = $admin->get_all_positions();
                                         <tbody>
                                         <?php
                                         $count = 0;
-                                        if(!empty($positions) && count($positions) > 0){
-                                            foreach ($positions as $position){
+                                        if(!empty($levels) && count($levels) > 0){
+                                            foreach ($levels as $level){
                                                 ?>
                                                 <tr>
                                                     <td>
                                                         <?= ++$count; ?>
                                                     </td>
                                                     <td>
-                                                        <?php if(isset($position['name'])) echo $position['name'] ?>
+                                                        <?= $level['name'] ?>
                                                     </td>
                                                 </tr>
                                             <?php   }
@@ -115,7 +114,7 @@ $positions = $admin->get_all_positions();
         ]
     });
 
-    $('#newPosition').submit(function (e) {
+    $('#newLevel').submit(function (e) {
         e.preventDefault();
         let form = new FormData(this);
         $.ajax({

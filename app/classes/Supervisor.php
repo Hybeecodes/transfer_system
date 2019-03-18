@@ -20,7 +20,6 @@ class Supervisor extends Master
         }else{
             $_SESSION['supervisor_email'] = $supervisor['email'];
             $_SESSION['supervisor_location'] = $supervisor['location_id'];
-            $_SESSION['user_type'] = 2;
             return json_encode(["status"=>1, "message" => "Login Successful"]);
         }
     }

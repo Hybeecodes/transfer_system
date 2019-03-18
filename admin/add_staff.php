@@ -8,9 +8,11 @@
 include '../app/init.php';
 include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
+$levels = $admin->get_levels();
 
 $locations = $admin->get_all_locations();
 $faculties = $admin->get_faculties();
+$positions = $admin->get_all_positions();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,115 +57,100 @@ $faculties = $admin->get_faculties();
                             <div class="alert">
 
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Firstname</label>
-                                        <input type="text" class="form-control" name="firstname" id="firstname">
-                                    </div>
-                                </div>
 
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Lastname</label>
-                                        <input type="text" class="form-control" name="lastname" id="lastname">
-                                    </div>
+                            <div class="row">
+                                <div class="col form-group">
+                                    <input type="text" name="firstname" placeholder="Firstname" id="firstname" class="form-control">
+                                </div>
+                                <div class="col form-group">
+                                    <input type="text" name="lastname" placeholder="Lastname" id="lastname" class="form-control">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Email</label>
-                                        <input type="email" class="form-control" name="email" id="email">
-                                    </div>
-                                </div>
 
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Phone</label>
-                                        <input type="tel" class="form-control" name="phone" id="phone">
-                                    </div>
+                            <div class="row">
+                                <div class="col form-group">
+                                    <input type="email" name="email" placeholder="Email" id="email" class="form-control">
+                                </div>
+                                <div class="col form-group">
+                                    <input type="tel" name="phone" placeholder="Phone" id="phone" class="form-control">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Year Of Employment</label>
-                                        <input type="number" class="form-control"  min="1900" max="2099" step="1" name="employment_year" id="employment_year">
-                                    </div>
-                                </div>
 
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Date Of Birth</label>
-                                        <input type="date" class="form-control" name="dob" id="dob">
-                                    </div>
+                            <div class="row">
+                                <div class="col form-group">
+                                    <input type="date" name="dob" placeholder="Date Of Birth" id="dob" class="form-control">
+                                </div>
+                                <div class="col form-group">
+                                    <input type="text" name="qualification" placeholder="Qualification" id="qualification" class="form-control">
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Qualification</label>
-                                        <input type="text" class="form-control" name="qualification" id="qualification">
-                                    </div>
-                                </div>
 
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Last Transfer Date</label>
-                                        <input type="date" class="form-control" name="transfer_date" id="transfer_date">
-                                    </div>
+                            <div class="row">
+                                <div class="col form-group">
+                                    <input type="date" name="last_transfer_date" placeholder="Last Transfer Date" id="lst_transfer_date" class="form-control">
+                                </div>
+                                <div class="col form-group">
+                                    <select name="movable" class="form-control" id="movable">
+                                        <option value="0">Immovable</option>
+                                        <option value="1">Movable</option>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-">Gender</label>
-                                        <select name="gender" id="gender" class="form-control">
-                                            <option value="Male">Male</option>
-                                            <option value="Female">Female</option>
-                                        </select>
-                                    </div>
-                                </div>
 
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Faculty</label>
-                                        <select name="faculty" id="faculty" class="form-control">
-                                            <option value=""></option>
+                            <div class="row">
+                                <div class="col form-group">
+                                    <select name="gender" class="form-control" id="gender">
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                    </select>
+                                </div>
+                                <div class="col form-group">
+                                    <select name="level" id="level" class="form-control">
+                                            <option value="">Select Level</option>
                                             <?php 
+                                                if(!empty($levels) && count($levels) > 0){
+                                                    foreach ($levels as $level) { ?>
+                                                        <option value="<?= $level['level_id'] ?>"><?= $level['name'] ?></option>
+                                                <?php    }
+                                                }
+                                            ?>
+                                    </select>
+                                </div>
+
+                            </div>
+                                    
+                                    <div class="row">
+                                    <div class="col form-group">
+                                        <label class="bmd-label-floating">Select Faculty</label>
+                                        <select name="faculty" class="form-control" id="faculty">
+                                            <option value=""></option>
+                                            <?php
                                             if(!empty($faculties) && count($faculties) > 0){
                                                 foreach ($faculties as $faculty) { ?>
-                                                    <option value="<?php if(isset($faculty['faculty_id'])) echo $faculty['faculty_id'] ?>"><?php if(isset($faculty['name'])) echo $faculty['name'] ?></option>
-                                            <?php    }
-                                                
+                                                    <option value="<?php if(isset($faculty['faculty_id'])) echo $faculty['faculty_id'] ?>"><?= $faculty['name'] ?></option>
+                                                <?php    }
                                             }
                                             ?>
+
                                         </select>
                                     </div>
-                                </div>
-                            </div>
-
+                                    </div>
                             <div class="row">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Location</label>
-                                        <select name="location" id="location" class="form-control">
+                            <div class="col form-group">
+                                        <label class="bmd-label-floating">Select Location</label>
+                                        <select name="location" class="form-control" id="location">
                                             <option value=""></option>
-
+                                            
                                         </select>
                                     </div>
-                                </div>
-
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Position</label>
-                                        <select name="position" id="position" class="form-control">
+                            <div class="col form-group">
+                                        <label class="bmd-label-floating">Select Position</label>
+                                        <select name="position" class="form-control" id="position">
                                             <option value=""></option>
                                         </select>
                                     </div>
-                                </div>
                             </div>
+                            
                             <div class="form-group">
                                 <button type="submit" class="btn btn-primary" id="submit" >Add Staff</button>
                             </div>
@@ -199,23 +186,23 @@ $faculties = $admin->get_faculties();
         placeholder: "Select Position"
     });
 
-    function validateInput(){
-        let email = $('#email').val();
-        let password = $('#password').val();
-        if(email === '' || password === ''){
-            $('.alert').addClass('alert-danger').removeClass('alert-success').text("Please Fill In All Fields !!");
-            return false;
-        }
-        return true;
-    }
+    // function validateInput(){
+    //     let email = $('#email').val();
+    //     let password = $('#password').val();
+    //     if(email === '' || password === ''){
+    //         $('.alert').addClass('alert-danger').removeClass('alert-success').text("Please Fill In All Fields !!");
+    //         return false;
+    //     }
+    //     return true;
+    // }
 
     $('#faculty').change(function () {
         $('.new_locs').remove();
         let faculty = $(this).val();
-        // console.log(faculty);
+        console.log(faculty);
         // fetch locations in faculty
         $.get(`parser.php?get_fac_locs=1&fac_id=${faculty}`,function (res) {
-            // console.log(res);
+            console.log(res);
             data= JSON.parse(res);
             data.forEach((d)=>{
                 $('#location').append(`<option class="new_locs" value="${d.location_id}">${d.name}</option>`);

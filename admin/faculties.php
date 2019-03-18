@@ -10,6 +10,7 @@ include '../app/init.php';
 include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
 $faculties = $admin->get_faculties();
+$levels = $admin->get_levels();
 // var_dump($faculties);
 //exit;
 ?>
@@ -54,8 +55,20 @@ Automated Staff Transfer System
                         <div class="card-body">
                             <h3>Add New Faculty</h3>
                             <form action="" id="newFaculty" class="row">
-                                <div class="form-gorup col-8">
+                                <div class="form-gorup col-4">
                                     <input type="text" name="name" placeholder="Faculty Name" class="form-control">
+                                </div>
+                                <div class="form-gorup col-4">
+                                    <select name="level" id="level" class="form-control">
+                                        <option value="">Select Level</option>
+                                        <?php 
+                                            if(!empty($levels) && count($levels) > 0){
+                                                foreach ($levels as $level) { ?>
+                                                    <option value="<?= $level['level_id'] ?>"><?= $level['name'] ?></option>
+                                            <?php    }
+                                            }
+                                        ?>
+                                    </select>
                                 </div>
                                 <input type="hidden" name="add_faculty" value="1">
                                 <div class="col-3">
@@ -134,6 +147,14 @@ Automated Staff Transfer System
               processData: false,
               success: function(data){
                   console.log(data);
+                  data = JSON.parse(data);
+                if(data['status']){
+                    swal("Great!",data['message'],'success').then(()=>{
+                        location.reload(true);
+                    })
+                }else{
+                    swal("Huh!",data['message'],'error');
+                }
               },
               error: function(xhr){
                   console.log(xhr);

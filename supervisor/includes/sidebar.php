@@ -87,7 +87,7 @@ $page = $pageArr[count($pageArr)-1];
             <li class="nav-item <?php if($page == 'recent_transfers.php') echo 'active'; ?> ">
                 <a class="nav-link" href="recent_transfers.php">
                     <i class="material-icons">library_books</i>
-                    <p>Supervisors</p>
+                    <p>Recent Transfers</p>
                 </a>
             </li>
 

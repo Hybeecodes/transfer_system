@@ -7,7 +7,6 @@
  */
 
 include '../app/init.php';
-include '../middleware/ensureLoggedIn.php';
 
 //
 $admin = new Admin($db_conn);
@@ -16,22 +15,88 @@ function validate_field($field){
     return isset($field) && $field != '';
 }
 
+if(isset($_POST['admin_login'])){
+    if(isset($_POST['email']) && $_POST['email'] != '' && isset($_POST['password']) && $_POST['password'] != ''){
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $response = $admin->admin_login($email,$password);
+    }else{
+        $response = json_encode(array("status"=>0,"message"=>"Please, Fill all fields!"));
+    }
+    exit($response);
+}
+
+function getCountries(){
+    global $dbc;
+    //check if user exist
+    $query_check = "SELECT * FROM `countries`";
+
+    $res_check = mysqli_query($dbc,$query_check);
+    $num = mysqli_num_rows($res_check);
+
+    if($num==0){
+        return false;
+    }else{
+        //retreive data to be used for Session data
+        $countries = mysqli_fetch_all($res_check,MYSQLI_ASSOC);
+        //redirect user to referer url or dashboard
+        return $countries;
+    }
+}
+
+function getStates($country_id){
+    global $dbc;
+    //check if user exist
+    $query_check = "SELECT * FROM `states` WHERE `country_id` = $country_id ";
+
+    $res_check = mysqli_query($dbc,$query_check);
+    $num = mysqli_num_rows($res_check);
+
+    if($num==0){
+        return false;
+    }else{
+        //retreive data to be used for Session data
+        $states = mysqli_fetch_all($res_check,MYSQLI_ASSOC);
+        //redirect user to referer url or dashboard
+        return $states;
+    }
+}
+
+function getCities($state_id){
+    global $dbc;
+    //check if user exist
+    $query_check = "SELECT * FROM `states` WHERE `state_id` = $state_id ";
+
+    $res_check = mysqli_query($dbc,$query_check);
+    $num = mysqli_num_rows($res_check);
+
+    if($num==0){
+        return false;
+    }else{
+        //retreive data to be used for Session data
+        $cities = mysqli_fetch_all($res_check,MYSQLI_ASSOC);
+        //redirect user to referer url or dashboard
+        return $cities;
+    }
+}
+include 'middleware/ensureLoggedIn.php';
+
 if(isset($_POST['add_staff'])){
-//    exit(var_dump($_POST));
-    if(validate_field($_POST['firstname']) && validate_field($_POST['lastname']) && validate_field($_POST['email']) && validate_field($_POST['phone']) && validate_field($_POST['employment_year']) && validate_field($_POST['dob']) && validate_field($_POST['qualification']) && validate_field($_POST['retirement_year']) && validate_field($_POST['gender'])){
+    //    exit(var_dump($_POST));
+    if(validate_field($_POST['firstname']) && validate_field($_POST['lastname']) && validate_field($_POST['email']) && validate_field($_POST['phone']) && validate_field($_POST['movable']) && validate_field($_POST['dob']) && validate_field($_POST['qualification']) && validate_field($_POST['level']) && validate_field($_POST['gender'])){
         $firstname = $_POST['firstname'];
         $lastname = $_POST['lastname'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
-        $employment_year = $_POST['employment_year'];
-        $transfer_date = $_POST['transfer_date'];
+        $transfer_date = $_POST['last_transfer_date'];
+        $level = @$_POST['level'];
         $dob = $_POST['dob'];
+        $movable = $_POST['movable'];
         $qualification = $_POST['qualification'];
         $gender = $_POST['gender'];
-        $faculty = @$_POST['faculty'];
         $location = $_POST['location'];
         $position = @$_POST['position'];
-        $response = $admin->add_new_staff($firstname,$lastname,$email,$phone,$employment_year,$dob,$qualification,$transfer_date,$gender,$faculty,$location,$position);
+        $response = $admin->add_new_staff($firstname,$lastname,$email,$phone,$dob,$qualification,$transfer_date,$movable,$gender,$level,$location,$position);
     }else{
         $response = json_encode(array("status"=>0,"message"=>"Sorry, Please fill all fields !"));
     }
@@ -41,7 +106,8 @@ if(isset($_POST['add_staff'])){
 if(isset($_POST['add_faculty'])){
     if(validate_field($_POST['name'])){
         $name = $_POST['name'];
-        $response = $admin->add_faculty($name);
+        $level = $_POST['level'];
+        $response = $admin->add_faculty($name,$level);
     }else{
         $response = json_encode(array("status"=>0,"message"=>"Sorry, Please fill all fields !"));
     }
@@ -54,7 +120,22 @@ if(isset($_POST['add_location'])){
         $name = $_POST['name'];
         $faculty_id = $_POST['faculty_id'];
         $positions = $_POST['positions'];
-        $response = $admin->add_location($name,$faculty_id,$positions);
+        $level = $_POST['level'];
+        $response = $admin->add_location($name,$faculty_id,$positions, $level);
+    }else{
+        $response = json_encode(array("status"=>0,"message"=>"Sorry, Please fill all fields !"));
+    }
+    exit($response);
+}
+
+if(isset($_POST['add_supervisor'])){
+    // exit(var_dump($_POST));
+    if(validate_field($_POST['name']) && validate_field($_POST['email']) || validate_field($_POST['faculty']) || validate_field($_POST['location'])){
+        $name = $_POST['name'];
+        $faculty_id = $_POST['faculty_id'];
+        $positions = $_POST['positions'];
+        $level = $_POST['level'];
+        $response = $admin->add_location($name,$faculty_id,$positions, $level);
     }else{
         $response = json_encode(array("status"=>0,"message"=>"Sorry, Please fill all fields !"));
     }
@@ -78,6 +159,16 @@ if(isset($_POST['new_pos'])){
     if(validate_field($_POST['name'])){
         $name = @$_POST['name'];
         $response = $admin->add_new_position($name);
+    }else{
+        $response = json_encode(array("status"=>0,"message"=>"Sorry, Please fill all fields !"));
+    }
+    exit($response);
+}
+
+if(isset($_POST['new_level'])){
+    if(validate_field($_POST['name'])){
+        $name = @$_POST['name'];
+        $response = $admin->add_level($name);
     }else{
         $response = json_encode(array("status"=>0,"message"=>"Sorry, Please fill all fields !"));
     }

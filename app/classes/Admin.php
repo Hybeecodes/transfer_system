@@ -77,6 +77,13 @@ class Admin extends Master
         return json_encode($response);
     }
 
+    public function get_supervisor(){
+        $data = "*";
+        $table = "supervisors";
+        $supervisors = $this->getAllData($data,$table);
+        return empty($supervisors)? []: $supervisors;
+    }
+
     public function get_feeedbacks()
     {
         $data = "*";
@@ -112,29 +119,28 @@ class Admin extends Master
         return json_encode($response);
     }
 
-    public function add_new_staff($firstname,$lastname,$email,$phone,$year_of_employment,$dob,$qualification,$transfer_date,$gender,$faculty_id,$location_id,$position_id){
+    public function add_new_staff($firstname,$lastname,$email,$phone,$dob,$qualification,$transfer_date,$movable,$gender,$level,$location_id,$position_id){
         $d = new DateTime($dob);
         $now = new DateTime();
         $age = $now->diff($d)->y;
-        $staff_id = $this->generate_id("staff");
+        $staff_id = $this->generate_id("staffs");
         $data = array(
             "staff_id"=>$staff_id,
             "firstname"=>$firstname,
             "lastname"=>$lastname,
             "email"=>$email,
             "phone"=>$phone,
-            "year_of_employment"=>$year_of_employment,
             "last_transfer_date"=> $transfer_date,
-            "faculty_id"=>$faculty_id,
             "location_id" => $location_id,
             "position_id" => $position_id,
             "date_of_birth"=>$dob,
+            "is_movable" => $movable,
             "qualification"=>$qualification,
             "age"=>$age,
             "gender"=>$gender
         );
-        $this->set_staff_transfer_interval($staff_id);
-        $table= "staff";
+        // $this->set_staff_transfer_interval($staff_id);
+        $table= "staffs";
         $res = $this->insertData($data,$table);
         if (!empty($res)) {
             $response = $res ? array("status" => 1, "message" => "New Staff is Created Successfully!") : array("status" => 0, "message" => "Sorry, Unable to Add New Staff");
@@ -145,7 +151,7 @@ class Admin extends Master
     public function search_staff($query)
     {
         $data = "*";
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE name %LIKE% $query";
         $res = $this->getAllData($data,$table,$where);
         return empty($res)? []: $res;
@@ -221,7 +227,7 @@ class Admin extends Master
     public function get_staff_posting_location($staff_id)
     {
         $data = ["location_id"];
-        $table = "staff";
+        $table = "staffs";
         $where =  "WHERE staff_id = '$staff_id'";
         $posting_location = $this->getData($data,$table,$where);
         $posting = empty($posting_location) ?  "" :  $posting_location['location_id'];
@@ -231,7 +237,7 @@ class Admin extends Master
     public function get_staff_posting_faculty($staff_id)
     {
         $data = ["faculty_id"];
-        $table = "staff";
+        $table = "staffs";
         $where =  "WHERE staff_id = '$staff_id'";
         $posting_faculty = $this->getData($data,$table,$where);
         $posting = empty($posting_faculty) ?  "" :  $posting_faculty['faculty_id'];
@@ -241,7 +247,7 @@ class Admin extends Master
     public function check_if_location_available($location_id)
     {
         $data = "*";
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE location_id = '$location_id'";
         $staff = $this->getData($data,$table,$where);
         $res = !empty($staff) ? false : true;
@@ -258,7 +264,7 @@ class Admin extends Master
         $years_before_retirement = $now->diff($d)->y;
         $transfer_interval = $years_before_retirement / 10;
         $data = array("transfer_interval"=>$transfer_interval);
-        $table= "staff";
+        $table= "staffs";
         $where = "WHERE staff_id = '$staff_id'";
         $res = $this->updateData($data,$table,$where);
         return $res;
@@ -267,7 +273,7 @@ class Admin extends Master
     public function get_staff_to_be_transfererd()
     {
         $data = "*";
-        $table = "staff";
+        $table = "staffs";
         $t_i = $this->get_settings()['transfer_interval'];
         $where = "WHERE DATE_ADD(last_transfer_date, INTERVAL $t_i YEAR)  <= CURDATE()";
         $res = $this->getAllData($data,$table,$where);
@@ -278,7 +284,7 @@ class Admin extends Master
     public function is_staff_transferrable($staff_id)
     {
         $data = "*";
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE staff_id = '$staff_id' AND transfer_date <= CURDATE()";
         $staff = $this->getData($data,$table,$where);
         $res = !empty($staff) ? true : false;
@@ -293,10 +299,11 @@ class Admin extends Master
         return $faculties;
     }
 
-    public function add_faculty($faculty_name){
+    public function add_faculty($faculty_name, $level){
         $data = array(
             "faculty_id"=>$this->generate_id('faculty_id'),
-            "name"=> $faculty_name
+            "name"=> $faculty_name,
+            "level_id" => $level
         );
         $table = "faculties";
         $res = $this->insertData($data,$table);
@@ -313,12 +320,13 @@ class Admin extends Master
         return $name;
     }
 
-    public function add_location($location_name,$faculty_id,$positions){
+    public function add_location($location_name,$faculty_id,$positions,$level){
         $location_id = $this->generate_id("location");
         $data = array(
             "location_id"=> $location_id,
             "faculty_id"=>$faculty_id,
-            "name"=> $location_name
+            "name"=> $location_name,
+            "level_id"=>$level
         );
         $table = "locations";
         $res = $this->insertData($data,$table);
@@ -330,12 +338,6 @@ class Admin extends Master
         $response = $res ? ["status" => 1, "message" => "New Location is Created Successfully!"] : ["status" => 0, "message" => "Sorry, Unable to Add Location Staff"];
         return json_encode($response);
     }
-
-    public function get_recent_transfers(){
-
-    }
-
-    
     
 
     public function set_location_position($location_id,$position_id)
@@ -392,7 +394,7 @@ class Admin extends Master
     public function get_all_staff()
     {
         $data = "*";
-        $table = "staff";
+        $table = "staffs";
         $staff = $this->getAllData($data,$table);
         if(empty($staff)){
             return array();
@@ -404,7 +406,7 @@ class Admin extends Master
     public function get_staff_details($staff_id)
     {
         $data = "*";
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE staff_id = '$staff_id'";
         $staff = $this->getData($data,$table,$where);
         if(empty($staff)){
@@ -423,7 +425,7 @@ class Admin extends Master
     public function is_location_postion_available($location_id,$position_id)
     {
         $data = "*";
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE location_id = '$location_id' AND position_id = '$position_id'";
         $res = $this->getData($data,$table,$where);
         return (empty($res)) ? true: false;
@@ -443,14 +445,23 @@ class Admin extends Master
 
     public function add_new_position($name)
     {
-        $data = [
-            "name"=>$name,
-            "position_id"=>$this->generate_id('pos')
-        ];
+        // check if position exists before
+        $data = '*';
         $table = "positions";
-        $res = $this->insertData($data,$table);
-        $response = $res ? ["status" => 1, "message" => "New Position is Created Successfully!"] : ["status" => 0, "message" => "Sorry, Unable to Create Position"];
-        return json_encode($response);
+        $where = "WHERE name = '$name'";
+        $position = $this->getData($data,$table,$where);
+        if(!empty($position)){
+            return json_encode(["status"=>0,"message"=>"Positon Exists Already"]);
+        }else{
+            $data = [
+                "name"=>$name,
+                "position_id"=>$this->generate_id('pos')
+            ];
+            $table = "positions";
+            $res = $this->insertData($data,$table);
+            $response = $res ? ["status" => 1, "message" => "New Position is Created Successfully!"] : ["status" => 0, "message" => "Sorry, Unable to Create Position"];
+            return json_encode($response);
+        }
     }
 
     public function get_next_staff_location($staff_id){
@@ -476,7 +487,7 @@ class Admin extends Master
         $data = [
             "last_transfer_date" => date('Y-m-d')
         ];
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE staff_id = '$staff_id'";
         $res = $this->updateData($data,$table,$where);
         return ($res)? true: false;
@@ -489,7 +500,7 @@ class Admin extends Master
         $current_location = $this->get_staff_posting_location($staff_id);
         $current_faculty =  $this->get_staff_posting_faculty($staff_id);
         $data = ["location_id"=>$next_location];
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE staff_id = '$staff_id'";
         $res = $this->updateData($data,$table,$where);
         if($res){
@@ -506,6 +517,14 @@ class Admin extends Master
         return false;
     }
 
+    public function get_location_faculty($location_id){
+        $data = ["faculty_id"];
+        $table = "locations";
+        $where = "WHERE location_id = '$location_id'";
+        $res = $this->getData($data,$table,$where);
+        return empty($res)? 0: $res['faculty_id'];
+    }
+
     public function get_staff_transfer_history($staff_id)
     {
         $data = "*";
@@ -518,16 +537,74 @@ class Admin extends Master
     public function update_staff_details($staff_id){
 
     }
-    
 
+    public function add_level($name){
+        $level_id = $this->generate_id('level');
+        $data = ["level_id"=>$level_id,"name"=> $name];
+        $table = "levels";
+        $add_level = $this->insertData($data,$table);
+        $response = $add_level ? ["status" => 1, "message" => "New Level is Created Successfully!"] : ["status" => 0, "message" => "Sorry, Unable to Create Level"];
+        return json_encode($response);
+    }
+
+    public function get_levels(){
+        $data = "*";
+        $table = "levels";
+        $levels = $this->getAllData($data,$table);
+        return empty($levels)? [] : $levels;
+    }
+
+    public function check_location_has_position($location_id, $position_id){
+        $data = "*";
+        $table = "locations";
+        $where = "location_id = '$location_id' AND position_id = '$position_id'";
+        $res = $this->getData($data,$table, $where);
+        return empty($res)? false: true;
+    }
+    
     public function transfer_staff($staff_id)
     {
         $faculties = $this->get_faculties();
+        $position_history = $this->get_staff_posting_history($staff_id);
         $staff = $this->get_staff_details($staff_id);
+        $staff_level = $staff['level_id'];
+        $staff_position = $staff['position_id'];
         $current_location = $staff['location_id'];
-        $current_faculty =
+        $current_faculty = $this->get_location_faculty($location_id);
         // randomized faculty
+        $fac_len = count($faculties);
+        $rand_faculty = $faculties[rand(0,$fac_len-1)];
+        // repeat randomization if faculty is the same as the current faculty
+        while($rand_faculty == $current_faculty || $rand_faculty['level_id'] != $staff_level ){
+            $rand_faculty = $faculties[rand(0,$fac_len-1)];
+        }
         // get rndomized locations also
+        // first get all locations in the resulting faculty
+        $fac_locations = $this->get_faculty_locations($rand_faculty);
+        $loc_len = count($fac_locations);
+        $rand_location = $fac_locations[rand(0,$loc_len-1)];
+        while(in_array($rand_location,$position_history) || $rand_location['location_id'] == $current_location || $rand_location['level_id'] != $staff_level || !$this->check_location_has_position($rand_location, $staff_position) || $this->is_location_postion_available($rand_location, $staff_position)){
+            $rand_location = $locations[rand(0,$loc_len-1)];
+        }
+        // update new staff location 
+        $data = [
+            "location_id" => $rand_location,
+            "last_transfer_date" => date('Y-m-d')
+        ];
+        $table ="staffs";
+        $where= "WHERE staff_id = '$staff_id'";
+        $update_staff = $this->updateData($data,$table,$where);
+        return $update_staff? json_encode(["status"=>1,"message"=>"Staff Transfered Successfully"]): json_endocde(["status"=>0,"message"=>"Sorry, An Error Occured"]);
     }
+
+    public function promote_staff($staff_id,$new_level){
+        // get new location with new  level
+    }
+
+    public function get_list_of_free_positions_with_locations(){
+
+    }
+
+    
 
 }
