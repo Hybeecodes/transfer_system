@@ -570,7 +570,7 @@ class Admin extends Master
         $staff_level = $staff['level_id'];
         $staff_position = $staff['position_id'];
         $current_location = $staff['location_id'];
-        $current_faculty = $this->get_location_faculty($location_id);
+        $current_faculty = $this->get_location_faculty($current_location);
         // randomized faculty
         $fac_len = count($faculties);
         $rand_faculty = $faculties[rand(0,$fac_len-1)];
@@ -584,7 +584,7 @@ class Admin extends Master
         $loc_len = count($fac_locations);
         $rand_location = $fac_locations[rand(0,$loc_len-1)];
         while(in_array($rand_location,$position_history) || $rand_location['location_id'] == $current_location || $rand_location['level_id'] != $staff_level || !$this->check_location_has_position($rand_location, $staff_position) || $this->is_location_postion_available($rand_location, $staff_position)){
-            $rand_location = $locations[rand(0,$loc_len-1)];
+            $rand_location = $fac_locations[rand(0,$loc_len-1)];
         }
         // update new staff location 
         $data = [
