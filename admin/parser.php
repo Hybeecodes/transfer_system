@@ -130,12 +130,12 @@ if(isset($_POST['add_location'])){
 
 if(isset($_POST['add_supervisor'])){
     // exit(var_dump($_POST));
-    if(validate_field($_POST['name']) && validate_field($_POST['email']) || validate_field($_POST['faculty']) || validate_field($_POST['location'])){
-        $name = $_POST['name'];
-        $faculty_id = $_POST['faculty_id'];
-        $positions = $_POST['positions'];
-        $level = $_POST['level'];
-        $response = $admin->add_location($name,$faculty_id,$positions, $level);
+    if(validate_field($_POST['firstname']) && validate_field($_POST['email']) && validate_field($_POST['faculty']) && validate_field($_POST['location']) && validate_field($_POST['lastname'])){
+        $firstname = @$_POST['firstname'];
+        $lastname = @$_POST['lastname'];
+        $email = @$_POST['email'];
+        $location = @$_POST['location'];
+        $response = $admin->add_supervisor($firstname,$lastname,$email,$firstname,$location);
     }else{
         $response = json_encode(array("status"=>0,"message"=>"Sorry, Please fill all fields !"));
     }
@@ -181,7 +181,8 @@ if(isset($_GET['transfer_all'])){
     if(!empty($staff)){
         foreach ($staff as $st){
             $staff_id = $st['staff_id'];
-            $admin->set_staff_new_location($staff_id);
+            $res = $admin->transfer_staff($staff_id);
+            // exit($res);
         }
         $response = json_encode(array("status"=>1,"message"=>"Transfer Completed Successfully"));
     }else{

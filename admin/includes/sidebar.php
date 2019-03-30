@@ -19,8 +19,8 @@ $page = $pageArr[count($pageArr)-1];
       Tip 2: you can also add an image using data-image tag
   -->
     <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Transfer System
+        <a href="/admin" class="simple-text logo-normal">
+            Administrator
         </a>
     </div>
     <div class="sidebar-wrapper">
@@ -63,7 +63,12 @@ $page = $pageArr[count($pageArr)-1];
                    <p>Add Location</p>
                </a>
             </li>
-
+            <li class="nav-item <?php if($page == 'add_staff.php') echo 'active'; ?> ">
+                <a class="nav-link" href="add_staff.php">
+                    <i class="material-icons">content_paste</i>
+                    <p>Add Staff</p>
+                </a>
+            </li>
             <li class="nav-item <?php if($page == 'all_staff.php') echo 'active'; ?> ">
                 <a class="nav-link" href="all_staff.php">
                     <i class="material-icons">content_paste</i>
@@ -71,10 +76,10 @@ $page = $pageArr[count($pageArr)-1];
                 </a>
             </li>
 
-            <li class="nav-item <?php if($page == 'add_staff.php') echo 'active'; ?> ">
-                <a class="nav-link" href="add_staff.php">
-                    <i class="material-icons">content_paste</i>
-                    <p>Add Staff</p>
+            <li class="nav-item ">
+                <a class="nav-link" href="transfer_history.php">
+                    <i class="material-icons">library_books</i>
+                    <p>Transfer History</p>
                 </a>
             </li>
             <li class="nav-item <?php if($page == 'transferable_staff.php') echo 'active'; ?> ">
@@ -85,16 +90,9 @@ $page = $pageArr[count($pageArr)-1];
             </li>
 
             <li class="nav-item <?php if($page == 'recent_transfers.php') echo 'active'; ?> ">
-                <a class="nav-link" href="recent_transfers.php">
+                <a class="nav-link" href="supervisors.php">
                     <i class="material-icons">library_books</i>
                     <p>Supervisors</p>
-                </a>
-            </li>
-
-            <li class="nav-item ">
-                <a class="nav-link" href="create_operator.php">
-                    <i class="material-icons">library_books</i>
-                    <p>Create Operator</p>
                 </a>
             </li>
 

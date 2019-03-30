@@ -2,18 +2,15 @@
 /**
  * Created by PhpStorm.
  * User: Megacodes
- * Date: 11/15/2018
- * Time: 3:06 PM
+ * Date: 3/20/2019
+ * Time: 2:34 PM
  */
-include '../app/init.php';
-include 'middleware/ensureLoggedIn.php';
-$supervisor = new Supervisor($db_conn);
-$supervisor_location = $_SESSION['supervisor_location'];
-$supervisor_id = $_SESSION['supervisor_id'];
-$staff = $supervisor->get_my_staff($supervisor_location);
-// get all faculties
 
-// var_dump($faculties);
+include '../app/init.php';
+include '../middleware/ensureLoggedIn.php';
+$admin = new Admin($db_conn);
+// get all faculties
+$staff = $admin->get_all_staff();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,38 +47,32 @@ $staff = $supervisor->get_my_staff($supervisor_location);
             <div class="container-fluid">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title ">Give Feedback</h4>
-                        <p class="card-category"> Give Feedback About A Staff </p>
+                        <h4 class="card-title ">Transfer History</h4>
                     </div>
                     <div class="card-body">
-                        <form action="" class="feedbackForm">
-                            <div class="form-group">
-                                <label for="title" class="bmd-label-floating">Feedback Title</label>
-                                <input type="text" name="title" class="form-control" id="title">
-                            </div>
-                            <div class="form-group">
-                                <label for="title" class="bmd-label-floating">Concerned Staff</label>
-                                <select name="staff" class="form-control" id="staff">
-                                    <option value="">Select Staff</option>
-                                    <?php
-                                        if(!empty($staff)):
-                                            foreach ($staff as $st):
-                                    ?>
-                                                <option value="<?= @$staff['staff_id'] ?>"><?= @$staff['firstname'] ?> <?= @$staff['lastname'] ?></option>
-                                    <?php
-                                            endforeach;
-                                        endif;
-                                    ?>
-                                </select>
-                            </div>
+                        <form action="staff_transfer_history.php">
 
-                            <div class="form-group">
-                                <label for="detail" class="bmd-label-floating">Feddback Detail</label>
-                                <textarea name="detail" id="detail" cols="30" class="form-control" rows="10"></textarea>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Select Staff</label>
+                                        <select name="staff" id="staff" class="form-control">
+                                            <option value=""></option>
+                                            <?php
+                                                if (!empty($staff)):
+                                                    foreach ($staff as $staff):
+                                            ?>
+                                                        <option value="<?= base64_encode(@$staff['staff_id']) ?>"><?= @$staff['firstname'] ?> <?= @$staff['lastname'] ?></option>
+                                            <?php
+                                                    endforeach;
+                                                endif;
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
                             </div>
-
                             <div class="form-group">
-                                <button type="submit" id="submit" class="btn btn-outline-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary" id="submit" >View Staff Transfer Records</button>
                             </div>
                         </form>
                     </div>
@@ -96,8 +87,8 @@ $staff = $supervisor->get_my_staff($supervisor_location);
 
 <?php include 'includes/scripts.php' ?>
 <script>
-    $('#positions').select2({
-        placeholder:"Select Available Positions"
+    $('#staff').select2({
+        placeholder:"Select A Staff"
     });
     function validateInput(){
         let email = $('#name').val();
@@ -107,12 +98,31 @@ $staff = $supervisor->get_my_staff($supervisor_location);
         }
         return true;
     }
+    $('#location').select2({
+        placeholder: "Select Location"
+    });
+    $('#faculty').select2({
+        placeholder: "Select Faculty"
+    });
 
+    $('#faculty').change(function () {
+        $('.new_locs').remove();
+        let faculty = $(this).val();
+        console.log(faculty);
+        // fetch locations in faculty
+        $.get(`parser.php?get_fac_locs=1&fac_id=${faculty}`,function (res) {
+            console.log(res);
+            data= JSON.parse(res);
+            data.forEach((d)=>{
+                $('#location').append(`<option class="new_locs" value="${d.location_id}">${d.name}</option>`);
+            });
+        });
+    });
 
-    $('#feedbackForm').submit(function(e){
+    $('#supervisorForm').submit(function(e){
         e.preventDefault();
         let form = new FormData(this);
-        form.append('give_feedback',"");
+        form.append('add_supervisor',"");
         $('#submit').text('Please wait...').attr('disabled',true);
         $.ajax({
             type: 'POST',
@@ -133,7 +143,7 @@ $staff = $supervisor->get_my_staff($supervisor_location);
                     })
                 }else{
                     swal("Huh!",message,'error').then(function(){
-                        $('#submit').text('Submit').attr('disabled',false);
+                        $('#submit').text('Add Supervisor').attr('disabled',false);
                     })
                 }
             },

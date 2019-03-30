@@ -17,5 +17,19 @@ if(isset($_POST['supervisor_login'])){
     }
     exit($response);
 }
+include 'middleware/ensureLoggedIn.php';
+$supervisor_id = $_SESSION['supervisor_id'];
+
+if(isset($_POST['give_feedback'])){
+    if(validate_field($_POST['title']) && validate_field($_POST['details']) && validate_field($_POST['staff'])){
+        $title = @$_POST['title'];
+        $detail = @$_POST['detail'];
+        $staff = @$_POST['staff'];
+        $response = $supervisor->give_staff_feedback($supervisor_id,$staff,$title,$detail);
+    }else{
+        $response = json_encode(array("status"=>0,"message"=>"Please, Fill all fields!"));
+    }
+    exit($response);
+}
 
 ?>

@@ -90,7 +90,7 @@
                     if(status == 1){
                         $('.alert').addClass('alert-success').removeClass('alert-danger').text(message);
                         setTimeout(()=>{
-                            window.location = '/';
+                            window.location = 'index.php';
                         },2000);
                     }else{
                         $('.alert').addClass('alert-danger').removeClass('alert-success').text(message);

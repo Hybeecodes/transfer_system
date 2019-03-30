@@ -31,86 +31,20 @@ $page = $pageArr[count($pageArr)-1];
                     <p>Dashboard</p>
                 </a>
             </li>
-            <li class="nav-item ">
-                <a class="nav-link <?php if($page == 'levels.php') echo 'active'; ?>" href="levels.php">
-                    <i class="material-icons">content_paste</i>
-                    <p>Levels</p>
-                </a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link <?php if($page == 'positions.php') echo 'active'; ?>" href="positions.php">
-                    <i class="material-icons">content_paste</i>
-                    <p>Positions</p>
-                </a>
-            </li>
-           <li class="nav-item ">
-               <a class="nav-link <?php if($page == 'faculties.php') echo 'active'; ?>" href="faculties.php">
-                   <i class="material-icons">content_paste</i>
-                   <p>Faculties</p>
-               </a>
-            </li>
 
-            <li class="nav-item ">
-               <a class="nav-link <?php if($page == 'locations.php') echo 'active'; ?>" href="locations.php">
-                   <i class="material-icons">content_paste</i>
-                   <p>Locations</p>
-               </a>
-            </li>
-
-            <li class="nav-item ">
-               <a class="nav-link <?php if($page == 'add_location.php') echo 'active'; ?>" href="add_location.php">
-                   <i class="material-icons">content_paste</i>
-                   <p>Add Location</p>
-               </a>
+            <li class="nav-item <?php if($page == 'staff.php') echo 'active'; ?> ">
+                <a class="nav-link" href="staffs.php">
+                    <i class="material-icons">content_paste</i>
+                    <p>Staffs</p>
+                </a>
             </li>
 
             <li class="nav-item <?php if($page == 'all_staff.php') echo 'active'; ?> ">
-                <a class="nav-link" href="all_staff.php">
+                <a class="nav-link" href="give_feedback.php">
                     <i class="material-icons">content_paste</i>
-                    <p>All Staff</p>
+                    <p>Give Feedback</p>
                 </a>
             </li>
-
-            <li class="nav-item <?php if($page == 'add_staff.php') echo 'active'; ?> ">
-                <a class="nav-link" href="add_staff.php">
-                    <i class="material-icons">content_paste</i>
-                    <p>Add Staff</p>
-                </a>
-            </li>
-            <li class="nav-item <?php if($page == 'transferable_staff.php') echo 'active'; ?> ">
-                <a class="nav-link" href="transferable_staff.php">
-                    <i class="material-icons">library_books</i>
-                    <p>Transferable Staff</p>
-                </a>
-            </li>
-
-            <li class="nav-item <?php if($page == 'recent_transfers.php') echo 'active'; ?> ">
-                <a class="nav-link" href="recent_transfers.php">
-                    <i class="material-icons">library_books</i>
-                    <p>Recent Transfers</p>
-                </a>
-            </li>
-
-            <li class="nav-item ">
-                <a class="nav-link" href="create_operator.php">
-                    <i class="material-icons">library_books</i>
-                    <p>Create Operator</p>
-                </a>
-            </li>
-
-            <li class="nav-item ">
-                <a class="nav-link" href="change_password.php">
-                    <i class="material-icons">library_books</i>
-                    <p>Change Password</p>
-                </a>
-            </li>
-
-<!--            <li class="nav-item ">-->
-<!--                <a class="nav-link" href="change_password.php">-->
-<!--                    <i class="material-icons">library_books</i>-->
-<!--                    <p>Change Password</p>-->
-<!--                </a>-->
-<!--            </li>-->
 
         </ul>
     </div>

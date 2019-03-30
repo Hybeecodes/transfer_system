@@ -1,15 +1,20 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: hybeecodes
- * Date: 12/16/18
- * Time: 8:05 PM
+ * User: Megacodes
+ * Date: 3/20/2019
+ * Time: 2:49 PM
  */
+
 include '../app/init.php';
 include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
-$supervisors = $admin->get_supervisor();
-//var_dump($positions);
+if(!isset($_GET['staff'])){
+    header('location: transfer_history.php');
+}
+$staff_id = base64_decode(@$_GET['staff']);
+$staff_history = $admin->get_staff_transfer_history($staff_id);
+//var_dump($staff);
 //exit;
 ?>
 <!DOCTYPE html>
@@ -21,7 +26,7 @@ $supervisors = $admin->get_supervisor();
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Automated Staff Transfer System | Supervisors
+        Automated Staff Transfer System
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -47,39 +52,48 @@ $supervisors = $admin->get_supervisor();
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header card-header-primary">
-                                <h4 class="card-title ">All Supervisors</h4>
-                                <p class="card-category"> This is all Location Supervisor </p>
+                                <h4 class="card-title ">Transfer Records Of <?= @$staff_name ?></h4>
+                                <p class="card-category"> This is a list of all staff </p>
                             </div>
                             <div class="card-body">
-                                <a href="add_supervisor.php" class="btn btn-primary">Add Supervisor</a>
                                 <div class="table-responsive">
                                     <table class="table" id="staff">
                                         <thead class=" text-primary">
-                                        <th>
-                                            S/N
-                                        </th>
-                                        <th>
-                                            Name
-                                        </th>
-                                        <th>
-                                            Location
-                                        </th>
+                                        <tr>
+                                            <th>
+                                                S/N
+                                            </th>
+                                            <th>
+                                                Name
+                                            </th>
+                                            <th>
+                                                Faculty
+                                            </th>
+                                            <th>
+                                                Location
+                                            </th>
+                                            <th>
+                                                Transfer Date
+                                            </th>
+                                        </tr>
                                         </thead>
                                         <tbody>
                                         <?php
-                                        $count = 0;
-                                        if(!empty($supervisors) && count($supervisors) > 0){
-                                            foreach ($supervisors as $supervisor){
+                                        if(!empty($staff_history) && count($staff_history) > 0){
+                                            foreach ($staff_history as $record){
                                                 ?>
                                                 <tr>
                                                     <td>
-                                                        <?= ++$count; ?>
+                                                        <?= @$record['name'] ?>
                                                     </td>
                                                     <td>
-                                                        <?= @$supervisor['name'] ?>
+                                                        <?= @$record['faculty'] ?>
                                                     </td>
                                                     <td>
-                                                        <?= $admin->get_location_name(@$supervisor['location_id']) ?>
+                                                        <?= @$record['location'] ?>
+                                                    </td>
+                                                    <td>
+                                                        <?= @$record['created_at'] ?>
                                                     </td>
                                                 </tr>
                                             <?php   }
@@ -101,7 +115,7 @@ $supervisors = $admin->get_supervisor();
 
 <?php include 'includes/scripts.php' ?>
 <script>
-    $('table').DataTable({
+    $('#staff').DataTable({
         dom: 'Bfrtip',
         buttons: [
             'copyHtml5',
@@ -110,35 +124,9 @@ $supervisors = $admin->get_supervisor();
             'pdfHtml5'
         ]
     });
-
-    $('#newSupervisor').submit(function (e) {
-        e.preventDefault();
-        let form = new FormData(this);
-        $.ajax({
-            type: 'POST',
-            url: 'parser.php',
-            data: form,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(data){
-                console.log(data);
-                data = JSON.parse(data);
-                if(data['status']){
-                    swal("Great!",data['message'],'success').then(()=>{
-                        location.reload(true);
-                    })
-                }else{
-                    swal("Huh!",data['message'],'error');
-                }
-            },
-            error: function(xhr){
-                console.log(xhr);
-            }
-        })
-    })
 </script>
 
 </body>
 
 </html>
+

@@ -18,6 +18,7 @@ class Supervisor extends Master
         if(empty($supervisor)){
             return json_encode(["status"=>0, "message" => "Invalid Login Details"]);
         }else{
+            $_SESSION['supervisor_id'] = $supervisor['supervisor_id'];
             $_SESSION['supervisor_email'] = $supervisor['email'];
             $_SESSION['supervisor_location'] = $supervisor['location_id'];
             return json_encode(["status"=>1, "message" => "Login Successful"]);

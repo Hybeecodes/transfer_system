@@ -60,8 +60,17 @@ $levels = $admin->get_levels();
                             <div class="row">
                                 <div class="col">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">Name</label>
-                                        <input type="text" class="form-control" name="name" id="name">
+                                        <label class="bmd-label-floating">Firstname</label>
+                                        <input type="text" class="form-control" name="firstname" id="firstname">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Lastname</label>
+                                        <input type="text" class="form-control" name="lastname" id="lastname">
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +88,8 @@ $levels = $admin->get_levels();
                                 <div class="col">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Faculty</label>
-                                        <select name="faculty_id" class="form-control" id="faculty">
+                                        <select name="faculty" class="form-control" id="faculty">
+                                            <option value=""></option>
                                         <?php 
                                             if(!empty($faculties) && count($faculties) > 0){
                                                 foreach ($faculties as $faculty) { ?>
@@ -92,23 +102,6 @@ $levels = $admin->get_levels();
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="row">
-                                    <div class="col form-group">
-                                        <label class="bmd-label-floating">Select Faculty</label>
-                                        <select name="faculty" class="form-control" id="faculty">
-                                            <option value=""></option>
-                                            <?php
-                                            if(!empty($faculties) && count($faculties) > 0){
-                                                foreach ($faculties as $faculty) { ?>
-                                                    <option value="<?php if(isset($faculty['faculty_id'])) echo $faculty['faculty_id'] ?>"><?= $faculty['name'] ?></option>
-                                                <?php    }
-                                            }
-                                            ?>
-
-                                        </select>
-                                    </div>
-                                    </div>
                                     <div class="row">
                                         <div class="col form-group">
                                             <label class="bmd-label-floating">Select Location</label>
@@ -146,12 +139,31 @@ $levels = $admin->get_levels();
         }
         return true;
     }
+    $('#location').select2({
+        placeholder: "Select Location"
+    });
+    $('#faculty').select2({
+        placeholder: "Select Faculty"
+    });
 
+    $('#faculty').change(function () {
+        $('.new_locs').remove();
+        let faculty = $(this).val();
+        console.log(faculty);
+        // fetch locations in faculty
+        $.get(`parser.php?get_fac_locs=1&fac_id=${faculty}`,function (res) {
+            console.log(res);
+            data= JSON.parse(res);
+            data.forEach((d)=>{
+                $('#location').append(`<option class="new_locs" value="${d.location_id}">${d.name}</option>`);
+            });
+        });
+    });
 
     $('#supervisorForm').submit(function(e){
         e.preventDefault();
         let form = new FormData(this);
-        form.append('add_location',"");
+        form.append('add_supervisor',"");
         $('#submit').text('Please wait...').attr('disabled',true);
         $.ajax({
             type: 'POST',
@@ -171,7 +183,9 @@ $levels = $admin->get_levels();
                         location.reload(true);
                     })
                 }else{
-                    swal("Huh!",message,'error');
+                    swal("Huh!",message,'error').then(function(){
+                        $('#submit').text('Add Supervisor').attr('disabled',false);
+                    })
                 }
             },
             error:function (xhr) {

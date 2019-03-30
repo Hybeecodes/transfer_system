@@ -135,6 +135,7 @@ $staff = $admin->get_staff_to_be_transfererd();
             contentType: false,
             processData: false,
             success: function (res) {
+                console.log(res);
                 const data = JSON.parse(res);
                 if(data['status']){
                     swal("Great!",data['message'],'success').then(()=>{

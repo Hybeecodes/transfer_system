@@ -73,12 +73,7 @@ Automated Staff Transfer System
                                     <th>
                                         Location
                                     </th>
-                                    <th>
-                                        Employment Year
-                                    </th>
-                                    <th>
-                                        Retirement Year
-                                    </th>
+
                                     <th>
                                         Age
                                     </th>
@@ -111,12 +106,7 @@ Automated Staff Transfer System
                                         <td>
                                             <?php if(isset($st['location_id'])) echo $admin->get_location_name($st['location_id']) ?>
                                         </td>
-                                        <td>
-                                            <?php if(isset($st['year_of_employment'])) echo $st['year_of_employment'] ?>
-                                        </td>
-                                        <td>
-                                            <?php if(isset($st['year_of_retirement'])) echo $st['year_of_retirement'] ?>
-                                        </td>
+
                                         <td>
                                             <?php if(isset($st['age'])) echo $st['age'] ?>
                                         </td>

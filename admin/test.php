@@ -10,5 +10,5 @@ include '../app/init.php';
 $admin = new Admin($db_conn);
 
 //$locs = $admin->get_faculty_locations('faculty_id5bfa97d25b16c');
-$loc = $admin->get_next_staff_location('staff5bf3ffce2b05f');
-var_dump($loc);
+$new_transfer = $admin->transfer_staff('staffs5c92a4e1813cc');
+var_dump($new_transfer);
