@@ -1,0 +1,26 @@
+function transferStaff(staffID){
+    fetch all staff details // staff details includes level of staff, current staff location and faculty
+    faculties = fetch list of all faculties
+    fetch staff transfer history
+    randFaculty = generate random faculty from faculties
+    while(randFaculty is equal to currentFaculty OR randFaculty level is the different from staff level ){
+    // to prevent transferring the staff to the faculty two consecutive times
+        randFaculty = generate random faculty from faculties
+    }
+    facultyLocations = get all locations that belong to the randomly generated Faculty (randFaculty)
+    randLocation = generate random location from facultyLocations
+    while( randLocation is equal to currentLocation
+     OR
+     randLocation level is the different from staff level
+      OR
+    randLocation exists in staff transfer history
+     OR
+     randLocation does not require staff service
+     ){
+        randLocation = generate random location from facultyLocations
+    }
+      // at this point we already have a new location
+      update staff info
+      update staff transfer history
+      return updated staff info
+}
