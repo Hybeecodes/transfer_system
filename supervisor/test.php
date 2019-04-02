@@ -8,4 +8,4 @@
 
 include "../app/init.php";
 $supervisor = new Supervisor($db_conn);
-exit($supervisor->generate_id('superv'));
+exit($supervisor->get_name('superv5c922a988a31a'));

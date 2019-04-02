@@ -11,8 +11,9 @@ include 'middleware/ensureLoggedIn.php';
 $supervisor = new Supervisor($db_conn);
 $supervisor_location = $_SESSION['supervisor_location'];
 $supervisor_id = $_SESSION['supervisor_id'];
+// exit($supervisor_location);
 $staff = $supervisor->get_my_staff($supervisor_location);
-//var_dump($staff);
+// var_dump($staff);
 //exit;
 ?>
 <!DOCTYPE html>
@@ -81,7 +82,7 @@ $staff = $supervisor->get_my_staff($supervisor_location);
                                         <th>
                                             Gender
                                         </th>
-                                        <th>Action</th>
+                                        <!-- <th>Action</th> -->
                                         </thead>
                                         <tbody>
                                         <?php
@@ -106,7 +107,7 @@ $staff = $supervisor->get_my_staff($supervisor_location);
                                                         <?php if(isset($st['phone'])) echo $st['phone'] ?>
                                                     </td>
                                                     <td>
-                                                        <?php if(isset($st['location_id'])) echo $admin->get_location_name($st['location_id']) ?>
+                                                        <?php if(isset($st['location_id'])) echo $supervisor->get_location_name($st['location_id']) ?>
                                                     </td>
                                                     <td>
                                                         <?php if(isset($st['age'])) echo $st['age'] ?>
@@ -114,10 +115,10 @@ $staff = $supervisor->get_my_staff($supervisor_location);
                                                     <td class="text-primary">
                                                         <?php if(isset($st['gender'])) echo $st['gender'] ?>
                                                     </td>
-                                                    <td>
+                                                    <!-- <td>
                                                         <a href="edit_staff.php?sid=<?= base64_encode($st['staff_id']) ?>"
                                                            class="btn btn-primary">Edit</a>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                             <?php   }
                                         } ?>

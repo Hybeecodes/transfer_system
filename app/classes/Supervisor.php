@@ -25,10 +25,20 @@ class Supervisor extends Master
         }
     }
 
+    
+    public function get_location_name($location_id)
+    {
+        $data = ['name'];
+        $table = "locations";
+        $where = "WHERE location_id = '$location_id'";
+        $location = $this->getData($data,$table,$where);
+        return !empty($location)? $location['name']: "";
+    }
+
     public function get_my_staff($location)
     {
         $data =  "*";
-        $table = "staff";
+        $table = "staffs";
         $where = "WHERE location_id = '$location'";
         $staff = $this->getAllData($data, $table, $where);
         return empty($staff)? []: $staff;
@@ -50,12 +60,23 @@ class Supervisor extends Master
         }
     }
 
-    public function give_staff_feedback($supervisor_id, $staff_id,$title,$details)
+    public function get_name($id){
+        $data = ["name"];
+        $table ="supervisors";
+        $where = "WHERE supervisor_id = '$id'";
+        $res = $this->getData($data,$table,$where);
+        return $res['name'];
+    }
+
+    public function give_staff_feedback($supervisor_id,$location, $staff_id,$title,$details)
     {
         $data = [
+            "feedback_id" => $this->generate_id("feedback"),
             "supervisor_id" => $supervisor_id,
             "staff_id" => $staff_id,
             "title" => $title,
+            "location_id" => $location,
+            "supervisor_name"=> $this->get_name($supervisor_id),
             "details" => $details
         ];
         $table = "feedbacks";

@@ -386,6 +386,16 @@ class Admin extends Master
         $location = $this->getData($data,$table,$where);
         return !empty($location)? $location['name']: "";
     }
+    public function get_staff_name($staff_id)
+    {
+        $data = ['firstname','lastname'];
+        $table = "staffs";
+        $where = "WHERE staff_id = '$staff_id'";
+        $staff = $this->getData($data,$table,$where);
+        $firstname = $staff['firstname'];
+        $lastname = $staff['lastname'];
+        return !empty($staff)? "$firstname $lastname": "";
+    }
 
     public function get_all_location_names(){
         $data = "*";
@@ -579,7 +589,7 @@ class Admin extends Master
     public function check_location_has_position($location_id, $position_id){
         $data = "*";
         $table = "location_positions";
-        $where = "location_id = '$location_id' AND position_id = '$position_id'";
+        $where = "WHERE location_id = '$location_id' AND position_id = '$position_id'";
         $res = $this->getData($data,$table, $where);
         return empty($res)? false: true;
     }
@@ -592,10 +602,40 @@ class Admin extends Master
         $faculties = $this->getAllData($data,$table,$where);
         return empty($faculties)? []: $faculties;
     }
+
+    public function get_level_faculty_locations($level,$faculty_id)
+    {
+        $data = "*";
+        $table = "locations";
+        $where = "WHERE level_id = '$level' AND faculty_id = '$faculty_id'";
+        $faculties = $this->getAllData($data,$table,$where);
+        return empty($faculties)? []: $faculties;
+    }
+
+    public function get_locations_that_match($position_id,$locations){
+        $locs = [];
+        // return $position_id;
+        return $locations;
+        if(!empty($locations)){
+            foreach ($locations as $location) {
+                // get all location positions
+                $data = ["position_id"];
+                $table = "location_positions";
+                $location_id = $location['location_id'];
+                $where = "WHERE location_id = '$location_id'";
+                $pos = $this->getAllData($data,$table,$where);
+                if(!empty($pos)){
+                    if(in_array($position_id,$pos)){
+                        array_push($locs,$location);
+                    }
+                }
+            }
+        }
+        return $locs;
+    }
     
     public function transfer_staff($staff_id)
     {
-
         $position_history = $this->get_staff_posting_history($staff_id);
         $staff = $this->get_staff_details($staff_id);
         $current_location = $staff['location_id'];
@@ -604,15 +644,12 @@ class Admin extends Master
         $faculties = $this->get_level_faculty($staff_level);
         $current_faculty = $this->get_location_faculty($current_location);
 //        exit(var_dump($faculties));
-        if(empty($faculties)){
-            return json_encode(["status"=>0,"message"=>"No Faculty Match Found"]);
-        }
         // randomized faculty
         $fac_len = count($faculties);
         $rand_faculty = $faculties[rand(0,$fac_len-1)];
-    //    exit($rand_faculty);
+    //    exit($current_faculty);
         // repeat randomization if faculty is the same as the current faculty
-        while($rand_faculty == $current_faculty
+        while($rand_faculty['faculty_id'] == $current_faculty
         || 
         empty($this->get_faculty_locations($rand_faculty['faculty_id']))
          #|| $rand_faculty['level_id'] != $staff_level
@@ -622,11 +659,15 @@ class Admin extends Master
         // exit(var_dump($rand_faculty));
         // get rndomized locations also
         // first get all locations in the resulting faculty
-        $fac_locations = $this->get_faculty_locations($rand_faculty['faculty_id']);
+        $fac_locations = $this->get_level_faculty_locations($staff_level,$rand_faculty['faculty_id']);
+        $matched_locations = $this->get_locations_that_match($staff_position,$fac_locations);
+        exit(var_dump($matched_locations));
         $loc_len = count($fac_locations);
         $rand_location = $fac_locations[rand(0,$loc_len-1)];
         // exit(var_dump($rand_location));
-        while(in_array($rand_location,$position_history) || $rand_location['location_id'] == $current_location || $rand_location['level_id'] != $staff_level){
+        while(in_array($rand_location,$position_history) ||
+            !$this->check_location_has_position
+            ($rand_location['location_id'], $staff_position)){
             $rand_location = $fac_locations[rand(0,$loc_len-1)];
         }
         // update new staff location 

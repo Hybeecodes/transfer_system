@@ -12,7 +12,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Automated Staff Transfer System - login </title>
+    <title>Automated Staff Transfer System - Admin - login </title>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
     <!-- CSS Files -->
@@ -24,8 +24,8 @@
     <div class="container" style="width: 50%; margin: auto; padding-top: 10%;">
         <div class="card">
             <div class="card-header card-header-primary">
-                <h4 class="card-title">Login</h4>
-                <p class="card-category">Please fill the form to login</p>
+                <h4 class="card-title"><b>Administrator Login</b></h4>
+                <p class="card-category">Please fill the form to login to the Admin Portal</p>
             </div>
             <div class="card-body">
                 <form id="loginForm">

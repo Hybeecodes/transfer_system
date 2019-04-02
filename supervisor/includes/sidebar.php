@@ -20,7 +20,7 @@ $page = $pageArr[count($pageArr)-1];
   -->
     <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-            Transfer System
+            Supervisor
         </a>
     </div>
     <div class="sidebar-wrapper">

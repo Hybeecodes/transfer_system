@@ -12,7 +12,7 @@ $supervisor_location = $_SESSION['supervisor_location'];
 $supervisor_id = $_SESSION['supervisor_id'];
 $staff = $supervisor->get_my_staff($supervisor_location);
 // get all faculties
-
+// exit(var_dump($staff));
 // var_dump($faculties);
 ?>
 <!DOCTYPE html>
@@ -67,7 +67,7 @@ $staff = $supervisor->get_my_staff($supervisor_location);
                                         if(!empty($staff)):
                                             foreach ($staff as $st):
                                     ?>
-                                                <option value="<?= @$staff['staff_id'] ?>"><?= @$staff['firstname'] ?> <?= @$staff['lastname'] ?></option>
+                                                <option value="<?= @$st['staff_id'] ?>"><?= @$st['firstname'] ?> <?= @$st['lastname'] ?></option>
                                     <?php
                                             endforeach;
                                         endif;
@@ -96,8 +96,8 @@ $staff = $supervisor->get_my_staff($supervisor_location);
 
 <?php include 'includes/scripts.php' ?>
 <script>
-    $('#positions').select2({
-        placeholder:"Select Available Positions"
+    $('#staff').select2({
+        placeholder:"Select Concerned Staff"
     });
     function validateInput(){
         let email = $('#name').val();
@@ -109,7 +109,7 @@ $staff = $supervisor->get_my_staff($supervisor_location);
     }
 
 
-    $('#feedbackForm').submit(function(e){
+    $('.feedbackForm').submit(function(e){
         e.preventDefault();
         let form = new FormData(this);
         form.append('give_feedback',"");

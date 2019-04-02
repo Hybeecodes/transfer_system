@@ -182,7 +182,7 @@ if(isset($_GET['transfer_all'])){
         foreach ($staff as $st){
             $staff_id = $st['staff_id'];
             $res = $admin->transfer_staff($staff_id);
-            // exit($res);
+             exit($res);
         }
         $response = json_encode(array("status"=>1,"message"=>"Transfer Completed Successfully"));
     }else{

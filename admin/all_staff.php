@@ -80,7 +80,7 @@ Automated Staff Transfer System
                                     <th>
                                         Gender
                                     </th>
-                                    <th>Action</th>
+                                    <!-- <th>Action</th> -->
                                     </thead>
                                     <tbody>
                                     <?php
@@ -113,10 +113,10 @@ Automated Staff Transfer System
                                         <td class="text-primary">
                                             <?php if(isset($st['gender'])) echo $st['gender'] ?>
                                         </td>
-                                        <td>
+                                        <!-- <td>
                                             <a href="edit_staff.php?sid=<?= base64_encode($st['staff_id']) ?>"
                                                class="btn btn-primary">Edit</a>
-                                        </td>
+                                        </td> -->
                                     </tr>
                                     <?php   }
                                     } ?>

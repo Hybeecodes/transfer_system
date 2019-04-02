@@ -9,7 +9,6 @@
 include '../app/init.php';
 include '../middleware/ensureLoggedIn.php';
 $admin = new Admin($db_conn);
-$settings = $admin->get_settings();
 //exit(var_dump($settings));
 ?>
 <!DOCTYPE html>

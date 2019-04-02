@@ -19,7 +19,7 @@ $feedbacks = $admin->get_feeedbacks();
     <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Automated Staff Transfer System | Supervisor
+        Automated Staff Transfer System | Admin
     </title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
     <!--     Fonts and icons     -->
@@ -48,14 +48,14 @@ $feedbacks = $admin->get_feeedbacks();
                                     <i class="material-icons">content_copy</i>
                                 </div>
                                 <p class="card-category">Total Staff</p>
-                                <h3 class="card-title">49/50
-                                    <small>GB</small>
+                                <h3 class="card-title">100
+                                    <small></small>
                                 </h3>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
                                     <i class="material-icons text-danger">warning</i>
-                                    <a href="#pablo">Get More Space...</a>
+                                    <a href="#pablo"></a>
                                 </div>
                             </div>
                         </div>
@@ -67,11 +67,11 @@ $feedbacks = $admin->get_feeedbacks();
                                     <i class="material-icons">store</i>
                                 </div>
                                 <p class="card-category">Staff Due For Transfer</p>
-                                <h3 class="card-title">$34,245</h3>
+                                <h3 class="card-title">20</h3>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
-                                    <i class="material-icons">date_range</i> Last 24 Hours
+                                    <i class="material-icons">date_range</i>
                                 </div>
                             </div>
                         </div>
@@ -103,12 +103,51 @@ $feedbacks = $admin->get_feeedbacks();
                                     ?>
                                     <tr>
                                         <td><?= @++$count ?></td>
-                                        <td><?= $feedback['supervisor'] ?></td>
-                                        <td><?= $feedback['location'] ?></td>
+                                        <td><?= $feedback['supervisor_name'] ?></td>
+                                        <td><?= $admin->get_location_name($feedback['location_id']) ?></td>
                                         <td><?= $feedback['title'] ?></td>
                                         <td>
-                                            <button class="btn-primary" onclick="">View Details</button>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal<?= $feedback['feedback_id'] ?>">View Details</button>
                                         </td>
+                                       
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal<?= $feedback['feedback_id'] ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel<?= $feedback['feedback_id'] ?>" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Feedback From <?= $admin->get_location_name($feedback['location_id']) ?></h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>
+                                                    <b>Supervisor:</b> <?= $feedback['supervisor_name'] ?>
+                                                </p>
+
+                                                <p>
+                                                    <b>Concerned Staff:</b> <?= $admin->get_staff_name($feedback['staff_id']) ?>
+                                                </p>
+
+                                                <p>
+                                                    <b>Title:</b> <?= $feedback['title'] ?>
+                                                </p>
+
+                                                <p>
+                                                    <b>Body:</b> <?= $feedback['details'] ?>
+                                                </p>
+
+                                                <p>
+                                                    <b>Date Sent:</b> <?= $feedback['created_at'] ?>
+                                                </p>
+
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        </div>
                                     </tr>
                                     <?php
                                             endforeach;
